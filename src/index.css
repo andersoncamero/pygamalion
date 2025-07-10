@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+:root {
+  --font-primary: livvic, livvic-normal-fallback;
+  --color-primary: #00698c;
+  --color-secondary: #13b6cb; 
+  --color-light: #e8e3dd;
+  --color-gray: #706f6f;
+  --color-dark: #1d1d1b;
+}
+
+.h1 .h2 {
+  font-family: var(--font-primary);
+}
