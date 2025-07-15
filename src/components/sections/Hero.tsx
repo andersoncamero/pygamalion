@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { CardCarousel } from "../UI/CardCarusel";
+import { CardCarousel } from "../UI/CardCarousel";
 // import { Button } from "../UI/Button";
 
 const heroImages = [
