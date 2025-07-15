@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
-  :root {
-    --font-primary: livvic, livvic-normal-fallback;
-    --color-primary: #00698c;
-    --color-secondary: #13b6cb;
-    --color-light: #e8e3dd;
-    --color-gray: #706f6f;
-    --color-dark: #1d1d1b;
-  }
-
+:root {
+  --font-primary: livvic, livvic-normal-fallback;
+  --color-primary: #00698c;
+  --color-secondary: #13b6cb;
+  --color-light: #e8e3dd;
+  --color-gray: #706f6f;
+  --color-dark: #1d1d1b;
+}
 
 .h1 .h2 {
   font-family: var(--font-primary);
@@ -16,13 +15,81 @@
 
 @keyframes scroll {
   0% {
-    transform: translateX();
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-400px * 3 - 0.5rem * 6));
+    transform: translateX(calc(-280px * 3 - 1rem * 3));
   }
 }
 
+@keyframes scroll-sm {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-350px * 3 - 1rem * 3));
+  }
+}
+
+@keyframes scroll-lg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-400px * 3 - 1rem * 3));
+  }
+}
+
+
 .animate-scroll {
-  animation: scroll 15s linear infinite;
+  animation: scroll 18s linear infinite;
+  transition: animation-play-state 0.3s ease;
+}
+
+.animate-scroll-paused {
+  animation: scroll 18s linear infinite;
+  animation-play-state: paused;
+  transition: animation-play-state 0.3s ease;
+}
+
+/* Responsividad para tablet */
+@media (min-width: 640px) {
+  .animate-scroll {
+    animation: scroll-sm 20s linear infinite;
+  }
+  
+  .animate-scroll-paused {
+    animation: scroll-sm 20s linear infinite;
+    animation-play-state: paused;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .animate-scroll {
+    animation: scroll-lg 22s linear infinite;
+  }
+  
+  .animate-scroll-paused {
+    animation: scroll-lg 22s linear infinite;
+    animation-play-state: paused;
+  }
+}
+
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+
+.animate-scroll {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+
+.animate-scroll,
+.animate-scroll-paused {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
