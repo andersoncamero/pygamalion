@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-dark)] mb-6 leading-tight">
             {splitText("En cada voz habita una")}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
+            <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
               {" "}
               {splitTextByChars("historia")}
             </span>
