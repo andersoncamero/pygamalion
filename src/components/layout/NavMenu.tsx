@@ -6,12 +6,14 @@ interface NavMenuProps {
   orientation?: "horizontal" | "vertical";
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  scrolled: boolean;
 }
 
 export const NavMenu: React.FC<NavMenuProps> = ({
   activeTab,
   setActiveTab,
   orientation = "horizontal",
+  scrolled,
 }) => {
   const links = [
     { label: "Nosotros", tab: "nosotros" },
@@ -33,6 +35,21 @@ export const NavMenu: React.FC<NavMenuProps> = ({
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
+
+  const getButtonClasses = (linkTab: string) => {
+    const isActive = activeTab === linkTab;
+    
+    return `text-ms font-medium transition-all duration-300 ease-in-out ${
+      isActive
+        ? scrolled
+          ? "text-[var(--color-gray)] hover:text-[var(--color-gray)]"
+          : "text-[var(--color-dark)] hover:text-[var(--color-gray)]"
+        : scrolled
+          ? "text-[var(--color-dark)] hover:text-[var(--color-dark)]"
+          : "text-[var(--color-light)] hover:text-[var(--color-dark)]"
+    }`;
+  };
+
   return (
     <motion.nav
       className={layoutClasses}
@@ -47,11 +64,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({
             setActiveTab(link.tab);
             requestAnimationFrame(() => scrollToSection(link.tab, -200));
           }}
-          className={`text-ms font-medium transition-colors ${
-            activeTab === link.tab
-              ? "text-[var(--color-primary)]"
-              : "text-[var(--color-gray)] hover:text-[var(--color-primary)]/60"
-          }`}
+          className={getButtonClasses(link.tab)}
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             {link.label}
