@@ -1,55 +1,82 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import { CardCarousel } from "../UI/CardCarousel";
 // import { Button } from "../UI/Button";
+
+const heroImages = [
+  {
+    src: "/imgs/estu_col.png",
+    alt: "Estudiantes colaborando en proyecto educativo",
+    title: "Educación Colaborativa",
+  },
+  {
+    src: "/imgs/maestro_estudiante.png",
+    alt: "Maestra ayudando a estudiante con tecnología",
+    title: "Tecnología Educativa",
+  },
+  {
+    src: "/imgs/estudiantes.png",
+    alt: "Grupo diverso de estudiantes en clase",
+    title: "Diversidad e Inclusión",
+  },
+];
 
 export const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+
   const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  const CaruselImages = [...heroImages, ...heroImages];
 
   useEffect(() => {
     document.fonts.ready.then(() => {
-      if (!heroRef.current) return;
-
-      heroRef.current.style.visibility = "visible";
       setIsVisible(true);
     });
   });
 
-  const splitText = (text: string) => {
-    return text.split(" ").map((word, index) => (
-      <motion.span
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{
-          duration: 0.6,
-          delay: index * 0.1,
-          ease: [0.25, 0.46, 0.45, 0.94],
-        }}
-        className="inline-block mr-2"
-      >
-        {word}
-      </motion.span>
-    ))
-  }
+  const splitText = useCallback(
+    (text: string) => {
+      return text.split(" ").map((word, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{
+            duration: 0.6,
+            delay: index * 0.1,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          className="inline-block mr-2"
+        >
+          {word}
+        </motion.span>
+      ));
+    },
+    [isVisible]
+  );
 
-  const splitTextByChars = (text: string) => {
-    return text.split("").map((char, index) => (
-      <motion.span
-        key={index}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-        transition={{
-          duration: 0.4,
-          delay: 0.5 + index * 0.05,
-          ease: "easeOut",
-        }}
-        className="inline-block"
-      >
-        {char}
-      </motion.span>
-    ))
-  }
+  const splitTextByChars = useCallback(
+    (text: string) => {
+      return text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={
+            isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+          }
+          transition={{
+            duration: 0.4,
+            delay: 0.5 + index * 0.05,
+            ease: "easeOut",
+          }}
+          className="inline-block"
+        >
+          {char}
+        </motion.span>
+      ));
+    },
+    [isVisible]
+  );
 
   return (
     <section
@@ -66,33 +93,44 @@ export const Hero: React.FC = () => {
             </span>
           </h1>
 
-          <motion.p 
-          className="text-xl text-[var(--color-gray)] mb-8 leading-relaxed"
-          initial={{opacity: 0, y: 30}}
-          animate={isVisible ? {opacity: 1, y: 0} : {opacity: 0, y: 30}}
-          transition={{
-            duration: 0.8,
-            delay: 1.5,
-            ease: "easeOut"
-          }}
+          <motion.p
+            className="text-xl text-[var(--color-gray)] mb-8 leading-relaxed "
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{
+              duration: 0.8,
+              delay: 1.5,
+              ease: "easeOut",
+            }}
           >
             Nuestro compromiso es contribuir a la construcción de un mundo en el
             que cada persona pueda encontrar su lugar a través de una educación
             transformadora.
           </motion.p>
 
-          <div className="mt-12 flex flex-col md:flex-row md:flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-            {[1, 2, 3].map((_, i) => (
-              <div key={i} className="relative group w-full md:w-1/3">
-                <img
-                  src="/placeholder.svg?height=200&width=300"
-                  alt={`Imagen ${i + 1}`}
-                  className="rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow w-full h-48 object-cover"
-                />
-                <div className="absolute inset-0 bg-[var(--color-primary)]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <motion.div
+            className="gap-4 flex"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={
+              isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+            }
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <div className="container my-5">
+              <div className="overflow-hidden w-full">
+                <div className="flex whitespace-nowrap animate-scroll">
+                  {CaruselImages.map((img, index) => (
+                    <CardCarousel
+                      imageSrc={img.src}
+                      altText={img.alt}
+                      titleImage={img.title}
+                      key={index}
+                    />
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
 
           {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
             <Button
