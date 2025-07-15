@@ -9,7 +9,7 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ src, className }) => {
   return (
     <Link to="/" className="flex items-center space-x-2">
-      <img src={src} alt="Pygmalion Education House" className={className ||"w-50 h-auto"} />
+      <img src={src} alt="Pygmalion Education House" className={className ||"h-full w-[400px]"} />
     </Link>
   );
 };

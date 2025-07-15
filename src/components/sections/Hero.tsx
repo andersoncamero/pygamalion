@@ -23,8 +23,8 @@ const heroImages = [
 
 export const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
 
   const CaruselImages = [...heroImages, ...heroImages];
 
@@ -81,11 +81,11 @@ export const Hero: React.FC = () => {
   return (
     <section
       ref={heroRef}
-      className="pt-40 pb-16 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)]"
+      className="pt-32 sm:pt-40 pb-16 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)]"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-[var(--color-dark)] mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-dark)] mb-6 leading-tight">
             {splitText("En cada voz habita una")}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
               {" "}
@@ -94,7 +94,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           <motion.p
-            className="text-xl text-[var(--color-gray)] mb-8 leading-relaxed "
+            className="text-base sm:text-lg md:text-xl text-[var(--color-gray)] mb-8 leading-relaxed px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{
@@ -109,16 +109,22 @@ export const Hero: React.FC = () => {
           </motion.p>
 
           <motion.div
-            className="gap-4 flex"
+            className="w-full"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={
               isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
             }
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ type: "spring", duration: 0.8, delay: 0.5 }}
           >
-            <div className="container my-5">
+            <div className="my-8 sm:my-12">
               <div className="overflow-hidden w-full">
-                <div className="flex whitespace-nowrap animate-scroll">
+                <div
+                  className={`flex whitespace-nowrap ${
+                    isPaused ? "animate-scroll-paused" : "animate-scroll"
+                  }`}
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                >
                   {CaruselImages.map((img, index) => (
                     <CardCarousel
                       imageSrc={img.src}
