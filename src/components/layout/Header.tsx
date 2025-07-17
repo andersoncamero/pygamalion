@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { NavContainer } from "./NavContainer";
+import { getScrolledColorVariant } from "../../utilis/utils";
 
 interface HeaderProps {
   activeTab: string;
@@ -23,9 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
   return (
     <header
       className={`fixed top-0 w-full backdrop-blur-sm shadow-sm border-b border-[var(--color-primary)]/20 z-50 transition-all duration-400 ease-in-out ${
-        scrolled
-          ? "bg-[var(--color-light)] text-[var(--color-light)]"
-          : "bg-[var(--color-primary)] text-[var(--color-dark)]"
+        getScrolledColorVariant(scrolled)
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
