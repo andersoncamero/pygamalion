@@ -45,6 +45,7 @@ export const MenuList: React.FC<MenuListProps> = ({
           clickedDropdown={clickedDropdown}
           setActiveDropdown={setActiveDropdown}
           setClickedDropdown={setClickedDropdown}
+          isVertical={orientation === "vertical"}
         />
       ))}
     </ul>
