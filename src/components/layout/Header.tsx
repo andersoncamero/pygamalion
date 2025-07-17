@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         getScrolledColorVariant(scrolled)
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-shrink-0 mr-4">
             <Logo src={scrolled ? "/logo.png" : "/logo-FA.png"} />

@@ -4,9 +4,9 @@ import type React from "react";
 export const AboutUs: React.FC = () => {
   return (
     <div>
-      <section className="flex flex-col lg:flex-row lg:items-center lg:space-x-12 space-y-8 lg:space-y-0">
-        <div className="space-y-6">
-          <h2 className="text-4xl font-bold text-[var(--color-dark)] font-(family-name:--font-primary)">
+      <section className="w-full flex flex-col lg:flex-row lg:items-center lg:space-x-12 space-y-8 lg:space-y-0">
+        <div className="flex-1 space-y-6">
+          <h2 className="text-4xl text-[var(--color-dark)] font-[var(--font-primary)]">
             Somos Pygmalion Education House
           </h2>
           <p className="text-lg text-[var(--color-gray)]">
@@ -62,7 +62,7 @@ export const AboutUs: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-2xl shadow-xl">
+        <div className="flex-1 relative overflow-hidden rounded-2xl shadow-xl">
           <img
             src="https://grupogeard.com/wp-content/uploads/2021/05/11.-Trabajo-en-equipo-en-educacion-virtual-como-fomentarlo.png?height=400&width=600"
             alt="Equipo de Pygmalion Education House trabajando con educadores"

@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --font-primary: livvic, livvic-normal-fallback;
+  --font-primary: funtastic, livvic-normal-fallback;
   --color-primary: #00698c;
   --color-secondary: #13b6cb;
   --color-light: #e8e3dd;
   --color-gray: #706f6f;
   --color-dark: #1d1d1b;
+  --color-yellow: #ffd481;
+  --color-orange: #e68447;
+  --color-purple: #854698
 }
 
 .h1 .h2 {
@@ -18,7 +21,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-280px * 3 - 1rem * 3));
+    transform: translateX(calc(-280px * 3 - 0.5rem * 6));
   }
 }
 
@@ -27,7 +30,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-350px * 3 - 1rem * 3));
+    transform: translateX(calc(-350px * 3 - 0.5rem * 6));
   }
 }
 
@@ -36,7 +39,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-400px * 3 - 1rem * 3));
+    transform: translateX(calc(-400px * 3 - 0.5rem * 6));
   }
 }
 

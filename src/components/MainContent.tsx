@@ -18,7 +18,7 @@ export const MainContent: React.FC = () => {
       <Hero />
       <Stats />
       <main className="py-32">
-        <div className="container mx-auto px-4">
+        <div className="w-full px-4">
           <Tabs
             value={activeTab}
             onValueChange={setActiveTab}
