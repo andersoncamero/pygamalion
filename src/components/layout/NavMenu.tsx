@@ -1,6 +1,7 @@
-import type React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Button } from "../UI/Button";
+import { MenuList } from "../UI/MenuList";
+import type { MenuItem } from "../../interfaces/interfaces";
 
 interface NavMenuProps {
   orientation?: "horizontal" | "vertical";
@@ -10,67 +11,69 @@ interface NavMenuProps {
 }
 
 export const NavMenu: React.FC<NavMenuProps> = ({
+  orientation = "horizontal",
   activeTab,
   setActiveTab,
-  orientation = "horizontal",
   scrolled,
 }) => {
-  const links = [
-    { label: "Nosotros", tab: "nosotros" },
-    { label: "Servicios", tab: "Servicios" },
+  const [activeDropdown, setActiveDropdown] = useState<string>("");
+  const [clickedDropdown, setClickedDropdown] = useState<string>("");
+
+  const menuItems: MenuItem[] = [
+    {
+      label: "Productos",
+      tab: "productos",
+      subMenu: [
+        { label: "Lectoescritura", tab: "letoescritura" },
+        { label: "Literacy", tab: "literacy" },
+        { label: "Litterate", tab: "litterate" },
+      ],
+    },
+    {
+      label: "Servicios",
+      tab: "servicios",
+      subMenu: [
+        { label: "Asesorias", tab: "asesorias" },
+        { label: "Desarrollo profesional", tab: "desarrollo-profesional" },
+        { label: "Diseño", tab: "diseno" },
+      ],
+    },
+    {
+      label: "Nosotros",
+      tab: "nosotros",
+      subMenu: [
+        { label: "Sobre nosotros", tab: "sobre-nosotros" },
+        { label: "Liderazgo", tab: "liderazgo" },
+        { label: "Nuestro compromiso", tab: "nuestro-compromiso" },
+        { label: "Centro de noticias", tab: "noticias" },
+      ],
+    },
     { label: "Contacto", tab: "contactenos" },
   ];
 
   const layoutClasses =
     orientation === "horizontal"
-      ? "flex space-x-8"
+      ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 w-full md:w-auto md:justify-end"
       : "flex flex-col space-y-4 p-4";
-
-  const scrollToSection = (id: string, offset: number = 0) => {
-    console.log("scrollToSection", id, offset);
-    const element = document.getElementById(id);
-
-    if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY + offset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
-
-  const getButtonClasses = (linkTab: string) => {
-    const isActive = activeTab === linkTab;
-    
-    return `text-ms font-medium transition-all duration-300 ease-in-out ${
-      isActive
-        ? scrolled
-          ? "text-[var(--color-gray)] hover:text-[var(--color-gray)]"
-          : "text-[var(--color-dark)] hover:text-[var(--color-gray)]"
-        : scrolled
-          ? "text-[var(--color-dark)] hover:text-[var(--color-dark)]"
-          : "text-[var(--color-light)] hover:text-[var(--color-dark)]"
-    }`;
-  };
 
   return (
     <motion.nav
-      className={layoutClasses}
+      className={`${layoutClasses} ${orientation !== "vertical" ? "relative" : ""} z-50`}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {links.map((link) => (
-        <Button
-          key={link.tab}
-          onClick={() => {
-            setActiveTab(link.tab);
-            requestAnimationFrame(() => scrollToSection(link.tab, -200));
-          }}
-          className={getButtonClasses(link.tab)}
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            {link.label}
-          </motion.div>
-        </Button>
-      ))}
+      <MenuList
+        items={menuItems}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        scrolled={scrolled}
+        orientation={orientation}
+        activeDropdown={activeDropdown}
+        clickedDropdown={clickedDropdown}
+        setActiveDropdown={setActiveDropdown}
+        setClickedDropdown={setClickedDropdown}
+      />
     </motion.nav>
   );
 };

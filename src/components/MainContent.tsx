@@ -10,7 +10,7 @@ import { Stats } from "./sections/Stats";
 import { Footer } from "./layout/Footer";
 
 export const MainContent: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>("nosotros");
+  const [activeTab, setActiveTab] = useState<string>("sobre-nosotros");
 
   return (
     <div className="bg-[var(--color-light)] min-h-screen ">
@@ -24,8 +24,8 @@ export const MainContent: React.FC = () => {
             onValueChange={setActiveTab}
             className="w-full"
           >
-            <TabsContent value="nosotros">
-              <section id="nosotros" >
+            <TabsContent value="sobre-nosotros">
+              <section id="sobre-nosotros" >
                 <AboutUs />
               </section>
             </TabsContent>
