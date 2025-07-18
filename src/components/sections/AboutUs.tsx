@@ -4,9 +4,9 @@ import type React from "react";
 export const AboutUs: React.FC = () => {
   return (
     <div>
-      <section className="w-full flex flex-col lg:flex-row lg:items-center lg:space-x-12 space-y-8 lg:space-y-0">
+      <section className="w-full flex flex-col lg:flex-row lg:items-center lg:space-x-12 space-y-8 lg:space-y-0 p-8 md:p-10 lg:p-20  m-auto bg-cover">
         <div className="flex-1 space-y-6">
-          <h2 className="text-4xl text-[var(--color-dark)] font-[var(--font-primary)]">
+          <h2 className="text-7xl text-[var(--color-dark)]">
             Somos Pygmalion Education House
           </h2>
           <p className="text-lg text-[var(--color-gray)]">
@@ -85,11 +85,11 @@ export const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[var(--color-light)] rounded-3xl p-8 md:p-12 mt-12">
+      <section className="bg-[var(--color-light)] rounded-3xl p-8 md:p-16 lg:p-24  m-auto bg-cover">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-[var(--color-darck)] mb-4">
+          <h2 className="text-7xl text-[var(--color-dark)] mb-4">
             Nuestros Valores
-          </h3>
+          </h2>
           <p className="text-lg text-[var(--color-gray)] max-w-2xl mx-auto">
             Los principios que guían nuestro trabajo y definen nuestra identidad
             como organización educativa

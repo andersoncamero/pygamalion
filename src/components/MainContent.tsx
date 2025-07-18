@@ -17,7 +17,7 @@ export const MainContent: React.FC = () => {
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       <Hero />
       <Stats />
-      <main className="py-32">
+      <main className="py-4">
         <div className="w-full px-4">
           <Tabs
             value={activeTab}

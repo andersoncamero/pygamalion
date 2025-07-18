@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { CardCarousel } from "../UI/CardCarousel";
 import { AnimatedWord } from "../UI/AnimateWord";
+import { ImageCollage } from "../UI/ImageCollage";
 // import { Button } from "../UI/Button";
 
 const heroImages = [
@@ -46,7 +47,7 @@ export const Hero: React.FC = () => {
             delay: 0.6,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="inline-block mr-2"
+          className="inline-block m-1"
         >
           {word}
         </motion.span>
@@ -56,11 +57,11 @@ export const Hero: React.FC = () => {
   );
 
   return (
-    <section className="pt-32 sm:pt-40 pb-16 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)]">
+    <section className="pt-32 md:pt-42 lg:pt-52 pb-16 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)] px-8 md:px-16 lg:px-24 m-auto bg-cover">
       <div className="w-full mx-auto px-4 ">
         <div className="flex flex-col lg:flex-row items-center lg:items-start text-left w-full gap-8">
-          <div className="flex-1 space-y-6">
-            <motion.h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl text-[var(--color-dark)] leading-tight flex flex-wrap gap-3">
+          <div className="flex-1 mt-2 lg:mt-16 box-content md:box-border">
+            <motion.h1 className="font-bold font-primary text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-[var(--color-dark)] leading-tight flex flex-wrap gap-3 line-clamp-2 overflow-hidden">
               {splitText("En cada")}
               <AnimatedWord
                 colorClass="bg-[var(--color-secondary)]/30"
@@ -87,12 +88,12 @@ export const Hero: React.FC = () => {
                 colorClass="bg-[var(--color-orange)]/30"
                 delay={0.6}
               >
-                escuchada
+                reconocida
               </AnimatedWord>
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-[var(--color-gray)] leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[var(--color-dark)]/70 font-secondary leading-relaxed pt-6 sm:pt-12 md:pt-16 lg:pt-20"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{
@@ -107,11 +108,9 @@ export const Hero: React.FC = () => {
             </motion.p>
           </div>
 
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-xs xl:max-w-sm mx-auto lg:mx-0">
-            <motion.img
-              src="/imgs/ninos-en-circulo.png"
-              alt="Niños acostados en círculo"
-              className="w-full h-auto rounded-xl shadow-md object-cover"
+          <div className="w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
+            <motion.div
+              className="w-full h-auto rounded-xl  overflow-hidden"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={
                 isVisible
@@ -119,7 +118,36 @@ export const Hero: React.FC = () => {
                   : { opacity: 0, scale: 0.95 }
               }
               transition={{ type: "spring", duration: 0.8, delay: 0.8 }}
-            />
+            >
+              <ImageCollage
+                images={[
+                  {
+                    id: 1,
+                    src: "/imgs/ninos-en-circulo.png",
+                    alt: "ninos en un circulo",
+                  },
+                  {
+                    id: 2,
+                    src: "/imgs/ninos-en-circulo.png",
+                    alt: "ninos en un circulo",
+                  },
+                  {
+                    src: "/imgs/ninos-en-circulo.png",
+                    alt: "ninos en un circulo",
+                  },
+                  {
+                    id: 1,
+                    src: "/imgs/ninos-en-circulo.png",
+                    alt: "ninos en un circulo",
+                  },
+                  {
+                    id: 1,
+                    src: "/imgs/ninos-en-circulo.png",
+                    alt: "ninos en un circulo",
+                  },
+                ]}
+              />
+            </motion.div>
           </div>
         </div>
         <motion.div
