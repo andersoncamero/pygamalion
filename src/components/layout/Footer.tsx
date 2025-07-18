@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[var(--color-primary)] text-[var(--color-light)] py-16">
+    <footer className="bg-[var(--color-primary)] text-[var(--color-light)] p-8 md:p-16 lg:p-24 m-auto bg-cover">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:flex-wrap justify-between gap-8 mb-8">
           <div className="md:flex-1 max-w-md">

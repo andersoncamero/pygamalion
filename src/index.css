@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --font-primary: funtastic, livvic-normal-fallback;
+  --font-primary: Funtastic;
   --color-primary: #00698c;
   --color-secondary: #13b6cb;
   --color-light: #e8e3dd;
@@ -9,11 +9,31 @@
   --color-dark: #1d1d1b;
   --color-yellow: #ffd481;
   --color-orange: #e68447;
-  --color-purple: #854698
+  --color-purple: #854698;
+
+  --font-primary: "Funtastic";
+  --font-secondary: "Garet";
 }
 
-.h1 .h2 {
-  font-family: var(--font-primary);
+
+@layer base {
+  body {
+    font-family: var(--font-secondary);
+  }
+
+  h1, h2{
+    font-family: var(--font-primary);
+  }
+}
+
+@layer utilities {
+  .font-primary {
+    font-family: var(--font-primary);
+  }
+
+  .font-secondary {
+    font-family: var(--font-secondary);
+  }
 }
 
 @keyframes scroll {
@@ -43,7 +63,6 @@
   }
 }
 
-
 .animate-scroll {
   animation: scroll 18s linear infinite;
   transition: animation-play-state 0.3s ease;
@@ -55,35 +74,32 @@
   transition: animation-play-state 0.3s ease;
 }
 
-/* Responsividad para tablet */
+
 @media (min-width: 640px) {
   .animate-scroll {
     animation: scroll-sm 20s linear infinite;
   }
-  
+
   .animate-scroll-paused {
     animation: scroll-sm 20s linear infinite;
     animation-play-state: paused;
   }
 }
-
 
 @media (min-width: 1024px) {
   .animate-scroll {
     animation: scroll-lg 22s linear infinite;
   }
-  
+
   .animate-scroll-paused {
     animation: scroll-lg 22s linear infinite;
     animation-play-state: paused;
   }
 }
 
-
 .animate-scroll:hover {
   animation-play-state: paused;
 }
-
 
 .animate-scroll {
   will-change: transform;
@@ -91,8 +107,23 @@
   perspective: 1000px;
 }
 
-
 .animate-scroll,
 .animate-scroll-paused {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@font-face {
+  font-family: "Garet";
+  src: url("/fonts/Garet.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Funtastic";
+  src: url("/fonts/Sugarhug.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }

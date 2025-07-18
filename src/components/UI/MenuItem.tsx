@@ -107,7 +107,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       ) : (
         <Button
           onClick={handleClick}
-          className={`font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap text-sm ${
+          className={`font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap text-md ${
             item.subMenu ? "justify-between md:justify-center space-x-1" : ""
           } ${getItemColorClasses(activeTab, item.tab, scrolled, isVertical)} ${
             isVertical

@@ -2,7 +2,7 @@ import type React from "react";
 
 export const Stats: React.FC = () => {
   return (
-    <section className="py-1.5 sm:py-2 lg:py-2.5 bg-[var(--color-light)] mt-2 sm:mt-2.5">
+    <section className="bg-[var(--color-light)] p-8 md:p-16 lg:p-24 m-auto bg-cover">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-dark)] leading-tight">
