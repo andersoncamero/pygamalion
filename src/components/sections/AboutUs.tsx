@@ -7,7 +7,7 @@ export const AboutUs: React.FC = () => {
       <section className="w-full flex flex-col lg:flex-row lg:items-center lg:space-x-12 space-y-8 lg:space-y-0 p-8 md:p-10 lg:p-20  m-auto bg-cover">
         <div className="flex-1 space-y-6">
           <h2 className="text-7xl text-[var(--color-dark)]">
-            Somos Pygmalion Education House
+            ¿Quiénes somos?
           </h2>
           <p className="text-lg text-[var(--color-gray)]">
             Somos Pygmalion Education House, un sello educativo especializado en

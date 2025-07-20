@@ -7,26 +7,26 @@ import { ImageCollage } from "../UI/ImageCollage";
 
 const heroImages = [
   {
-    src: "/imgs/img-1.png",
+    src: "/imgs/img-1.webp",
     alt: "Estudiantes colaborando en proyecto educativo",
     title: "Educación Colaborativa",
   },
   {
-    src: "/imgs/img-2.png",
+    src: "/imgs/img-2.webp",
     alt: "Maestra ayudando a estudiante con tecnología",
     title: "Tecnología Educativa",
   },
   {
-    src: "/imgs/img-3.png",
+    src: "/imgs/img-3.webp",
     alt: "Grupo diverso de estudiantes en clase",
     title: "Diversidad e Inclusión",
   },
     {
-    src: "/imgs/img-4.png",
+    src: "/imgs/img-4.webp",
     alt: "Grupo diverso de estudiantes en clase",
     title: "Diversidad e Inclusión",
   },  {
-    src: "/imgs/img-5.png",
+    src: "/imgs/img-5.webp",
     alt: "Grupo diverso de estudiantes en clase",
     title: "Diversidad e Inclusión",
   },
@@ -132,26 +132,26 @@ export const Hero: React.FC = () => {
                 images={[
                   {
                     id: 1,
-                    src: "/imgs/ninos-en-circulo.png",
+                    src: "/imgs/ninos-en-circulo.webp",
                     alt: "ninos en un circulo",
                   },
                   {
                     id: 2,
-                    src: "/imgs/ninos-en-circulo.png",
+                    src: "/imgs/ninos-en-circulo.webp",
                     alt: "ninos en un circulo",
                   },
                   {
-                    src: "/imgs/ninos-en-circulo.png",
-                    alt: "ninos en un circulo",
-                  },
-                  {
-                    id: 1,
-                    src: "/imgs/ninos-en-circulo.png",
+                    src: "/imgs/ninos-en-circulo.webp",
                     alt: "ninos en un circulo",
                   },
                   {
                     id: 1,
-                    src: "/imgs/ninos-en-circulo.png",
+                    src: "/imgs/ninos-en-circulo.webp",
+                    alt: "ninos en un circulo",
+                  },
+                  {
+                    id: 1,
+                    src: "/imgs/ninos-en-circulo.webp",
                     alt: "ninos en un circulo",
                   },
                 ]}
