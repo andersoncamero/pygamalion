@@ -26,16 +26,19 @@ export const NavMenu: React.FC<NavMenuProps> = ({
       subMenu: [
         { label: "Lectoescritura", tab: "letoescritura" },
         { label: "Literacy", tab: "literacy" },
-        { label: "Litterate", tab: "litterate" },
+        { label: "Littératie", tab: "litteratie" },
+        { label: "Letramento", tab: "letramento" },
       ],
     },
     {
       label: "Servicios",
       tab: "servicios",
       subMenu: [
-        { label: "Asesorias", tab: "asesorias" },
+        { label: "Asesorías", tab: "asesorias" },
         { label: "Desarrollo profesional", tab: "desarrollo-profesional" },
         { label: "Diseño", tab: "diseno" },
+        { label: "Zona Glossa", tab: "zona-glossa" },
+
       ],
     },
     {
@@ -48,13 +51,22 @@ export const NavMenu: React.FC<NavMenuProps> = ({
         { label: "Centro de noticias", tab: "noticias" },
       ],
     },
+    {
+      label: "Centro de recursos",
+      tab: "recursos",
+      subMenu: [
+        { label: "Blogs", tab: "blogs" },
+        { label: "Podcasts", tab: "podcasts" },
+        { label: "Artículos", tab: "articulos" },
+      ],
+    },
     { label: "Contacto", tab: "contactenos" },
   ];
 
   const layoutClasses =
-    orientation === "horizontal"
-      ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 w-full md:w-auto md:justify-end"
-      : "flex flex-col space-y-4 p-4";
+  orientation === "horizontal"
+    ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-8 w-full md:w-auto md:justify-end"
+    : "flex flex-col space-y-4 p-4";
 
   return (
     <motion.nav

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import type { SubMenuLink } from "../../interfaces/interfaces";
-import { getItemColorClasses, scrollToSection } from "../../utilis/utils";
+import { getItemColorClasses, getScrolledColorVariant, scrollToSection } from "../../utilis/utils";
 
 interface VerticalSubMenuProps {
   subMenu: SubMenuLink[];
@@ -29,7 +29,7 @@ export const VerticalSubMenu: React.FC<VerticalSubMenuProps> = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -5 }}
       transition={{ duration: 0.2 }}
-      className="pl-4 mt-1 space-y-1 bg-[var(--color-light)] rounded-md shadow-md border border-gray-200 py-2"
+      className={`pl-4 mt-1 space-y-1 ${getScrolledColorVariant(scrolled)} rounded-md border border-gray-200 py-2`}
     >
       {subMenu.map((subItem) => (
         <li key={subItem.tab}>

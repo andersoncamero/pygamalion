@@ -21,8 +21,8 @@ export const getItemColorClasses = (
         ? "text-[var(--color-primary)]"
         : "text-[var(--color-dark)] hover:text-[var(--color-dark)]"
       : isActive
-        ? "text-[var(--color-primary)]"
-        : "text-[var(--color-gray)] hover:text-[var(--color-dark)]";
+        ? "text-[var(--color-dark)]"
+        : "text-[var(--color-light)] hover:text-[var(--color-dark)]";
   }
   if (isActive) {
     return scrolled
@@ -39,6 +39,6 @@ export const getScrolledColorVariant = (
   scrolled: boolean,
 ): string => {
   return scrolled
-    ? "bg-[var(--color-light)] text-[var(--color-light)]"
-    : "bg-[var(--color-primary)] text-[var(--color-dark)]";
+  ? "bg-[var(--color-light)]/95 text-[var(--color-dark)] shadow-md"
+  : "bg-[var(--color-primary)]/95 text-[var(--color-light)] shadow-sm";
 };
