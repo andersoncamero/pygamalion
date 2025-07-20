@@ -7,17 +7,26 @@ import { ImageCollage } from "../UI/ImageCollage";
 
 const heroImages = [
   {
-    src: "/imgs/estu_col.png",
+    src: "/imgs/img-1.png",
     alt: "Estudiantes colaborando en proyecto educativo",
     title: "Educación Colaborativa",
   },
   {
-    src: "/imgs/maestro_estudiante.png",
+    src: "/imgs/img-2.png",
     alt: "Maestra ayudando a estudiante con tecnología",
     title: "Tecnología Educativa",
   },
   {
-    src: "/imgs/estudiantes.png",
+    src: "/imgs/img-3.png",
+    alt: "Grupo diverso de estudiantes en clase",
+    title: "Diversidad e Inclusión",
+  },
+    {
+    src: "/imgs/img-4.png",
+    alt: "Grupo diverso de estudiantes en clase",
+    title: "Diversidad e Inclusión",
+  },  {
+    src: "/imgs/img-5.png",
     alt: "Grupo diverso de estudiantes en clase",
     title: "Diversidad e Inclusión",
   },
