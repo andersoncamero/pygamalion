@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavMenu } from "./NavMenu";
 import { Button } from "../UI/Button";
 import { Menu, X } from "lucide-react";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 interface NavContainerProps {
   activeTab: string;
@@ -15,6 +16,11 @@ export const NavContainer: React.FC<NavContainerProps> = ({
   scrolled,
 }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  const menuRef = useClickOutside<HTMLDivElement>({
+    onClickOutside: () => setMenuOpen(false),
+    enabled: menuOpen,
+  }) as React.RefObject<HTMLDivElement>;
 
   const getIconColor = () => {
     return scrolled
@@ -32,6 +38,14 @@ export const NavContainer: React.FC<NavContainerProps> = ({
     return `${baseClasses} ${responsiveClasses} ${hoverClasses} rounded-md`;
   };
 
+  const handleToggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className="flex items-center">
       <div className="hidden md:block">
@@ -44,7 +58,7 @@ export const NavContainer: React.FC<NavContainerProps> = ({
       </div>
       <Button
         className={getButtonStyle()}
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={handleToggleMenu}
         aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
         aria-expanded={menuOpen}
       >
@@ -61,6 +75,7 @@ export const NavContainer: React.FC<NavContainerProps> = ({
 
       {menuOpen && (
         <div
+          ref={menuRef}
           className={`absolute top-full left-0 w-full border-t shadow-md md:hidden transition-colors duration-200 ${
             scrolled
               ? "bg-[var(--color-light)] border-[var(--color-primary)]/20"
@@ -72,6 +87,7 @@ export const NavContainer: React.FC<NavContainerProps> = ({
             setActiveTab={setActiveTab}
             orientation="vertical"
             scrolled={scrolled}
+            onMenuClose={handleMenuClose}
           />
         </div>
       )}
