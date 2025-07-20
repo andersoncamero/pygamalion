@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
       <div className="w-full mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-2 sm:py-3 md:py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-shrink-0 mr-2 sm:mr-3 md:mr-4">
-            <Logo src={scrolled ? "/logo.png" : "/logo-FA.png"} />
+            <Logo src={scrolled ? "/logo.webp" : "/logo-FA.webp"} />
           </div>
           <div className="flex items-center">
             <NavContainer

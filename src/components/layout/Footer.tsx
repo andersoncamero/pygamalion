@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
           <div className="md:flex-1 max-w-md">
             <div className="flex items-center space-x-3 mb-4">
               <div className="rounded-xl flex items-center justify-center">
-                <Logo src="/logo-FA.png" className="w-80 h-auto" />
+                <Logo src="/logo-FA.webp" className="w-80 h-auto" />
               </div>
             </div>
             <p className="text-[var(--color-light)]">
