@@ -41,7 +41,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-280px * 3 - 0.5rem * 6));
+    transform: translateX(calc(-280px * 5 - 0.5rem * 10));
   }
 }
 
@@ -50,7 +50,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-350px * 3 - 0.5rem * 6));
+    transform: translateX(calc(-350px * 5 - 0.5rem * 10));
   }
 }
 
@@ -59,7 +59,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-400px * 3 - 0.5rem * 6));
+    transform: translateX(calc(-400px * 5 - 0.5rem * 10));
   }
 }
 
