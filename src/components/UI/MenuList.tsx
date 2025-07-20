@@ -27,11 +27,11 @@ export const MenuList: React.FC<MenuListProps> = ({
 }) => {
   return (
     <ul
-      className={
-        orientation === "horizontal"
-          ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8"
-          : "flex flex-col space-y-4 p-4"
-      }
+    className={
+      orientation === "horizontal"
+        ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-8"
+        : "flex flex-col space-y-4 p-4"
+    }
     >
       {items.map((item) => (
         <MenuItem

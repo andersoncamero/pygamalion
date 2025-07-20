@@ -70,6 +70,20 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     }
   };
 
+  const getAdaptiveButtonClasses = () => {
+    const baseClasses = "font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap";
+    
+    const typographyClasses = "text-sm md:text-sm lg:text-sm xl:text-base 2xl:text-base";
+    
+    const paddingClasses = isVertical 
+      ? "py-0 px-0"
+      : "py-1.5 px-2 md:px-2 lg:px-3 xl:px-4 2xl:px-4 w-full md:w-auto text-left md:text-center";
+    
+    const spacingClasses = item.subMenu ? "justify-between md:justify-center space-x-1" : "";
+    
+    return `${baseClasses} ${typographyClasses} ${paddingClasses} ${spacingClasses}`;
+  };
+
   return (
     <li
       key={item.tab}
@@ -80,12 +94,12 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       {item.subMenu && isVertical ? (
         <Button
           onClick={handleClick}
-          className={`font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap text-sm justify-between md:justify-center space-x-1 ${getItemColorClasses(
+          className={`${getAdaptiveButtonClasses()} ${getItemColorClasses(
             activeTab,
             item.tab,
             scrolled,
             isVertical
-          )} py-2 px-4 md:px-2 w-full md:w-auto text-left md:text-center`}
+          )}`}
           aria-haspopup={item.subMenu ? "true" : undefined}
           aria-expanded={item.subMenu ? isDropdownOpen.toString() : undefined}
         >
@@ -107,13 +121,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       ) : (
         <Button
           onClick={handleClick}
-          className={`font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap text-md ${
-            item.subMenu ? "justify-between md:justify-center space-x-1" : ""
-          } ${getItemColorClasses(activeTab, item.tab, scrolled, isVertical)} ${
-            isVertical
-              ? "py-0 px-0"
-              : "py-2 px-4 md:px-2 w-full md:w-auto text-left md:text-center"
-          }`}
+          className={`${getAdaptiveButtonClasses()} ${getItemColorClasses(activeTab, item.tab, scrolled, isVertical)}`}
           aria-haspopup={item.subMenu ? "true" : undefined}
           aria-expanded={item.subMenu ? isDropdownOpen.toString() : undefined}
         >
