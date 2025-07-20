@@ -110,19 +110,3 @@
 .animate-scroll-paused {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-@font-face {
-  font-family: "Garet";
-  src: url("/fonts/Garet.ttf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Funtastic";
-  src: url("/fonts/Sugarhug.ttf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}

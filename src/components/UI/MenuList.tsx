@@ -12,6 +12,7 @@ interface MenuListProps {
   clickedDropdown: string;
   setActiveDropdown: (tab: string) => void;
   setClickedDropdown: (tab: string) => void;
+  onMenuClose?: () => void;
 }
 
 export const MenuList: React.FC<MenuListProps> = ({
@@ -24,6 +25,7 @@ export const MenuList: React.FC<MenuListProps> = ({
   clickedDropdown,
   setActiveDropdown,
   setClickedDropdown,
+  onMenuClose,
 }) => {
   return (
     <ul
@@ -46,6 +48,7 @@ export const MenuList: React.FC<MenuListProps> = ({
           setActiveDropdown={setActiveDropdown}
           setClickedDropdown={setClickedDropdown}
           isVertical={orientation === "vertical"}
+          onMenuClose={onMenuClose}
         />
       ))}
     </ul>
