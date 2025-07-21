@@ -3,33 +3,33 @@ import { motion } from "motion/react";
 import { CardCarousel } from "../UI/CardCarousel";
 import { AnimatedWord } from "../UI/AnimateWord";
 import { ImageCollage } from "../UI/ImageCollage";
-// import { Button } from "../UI/Button";
+import { IMAGES } from "../../config/images";
 
 const heroImages = [
   {
-    src: "/imgs/img-1.webp",
-    alt: "Estudiantes colaborando en proyecto educativo",
-    title: "Educación Colaborativa",
+    src: IMAGES.carousel.img1,
+    alt: "Equidad y justicia social",
+    title: "Equidad y justicia social",
   },
   {
-    src: "/imgs/img-2.webp",
+    src: IMAGES.carousel.img2,
     alt: "Maestra ayudando a estudiante con tecnología",
-    title: "Tecnología Educativa",
+    title: "Pasiòn por la educaciòn",
   },
   {
-    src: "/imgs/img-3.webp",
+    src: IMAGES.carousel.img3,
     alt: "Grupo diverso de estudiantes en clase",
-    title: "Diversidad e Inclusión",
+    title: "Aprendizaje sin etiquetas",
   },
     {
-    src: "/imgs/img-4.webp",
+    src: IMAGES.carousel.img4,
     alt: "Grupo diverso de estudiantes en clase",
-    title: "Diversidad e Inclusión",
+    title: "Conciencia y comporomiso",
   },  {
-    src: "/imgs/img-5.webp",
+    src: IMAGES.carousel.img5,
     alt: "Grupo diverso de estudiantes en clase",
-    title: "Diversidad e Inclusión",
-  },
+    title: " Convivencia en la pluralidad",
+  }
 ];
 
 export const Hero: React.FC = () => {
@@ -132,27 +132,23 @@ export const Hero: React.FC = () => {
                 images={[
                   {
                     id: 1,
-                    src: "/imgs/ninos-en-circulo.webp",
-                    alt: "ninos en un circulo",
+                    src: IMAGES.hero.img1,
+                    alt: "ninos con maestra",
                   },
                   {
                     id: 2,
-                    src: "/imgs/ninos-en-circulo.webp",
-                    alt: "ninos en un circulo",
+                    src: IMAGES.hero.img2,
+                    alt: "ninos leyendo",
                   },
                   {
-                    src: "/imgs/ninos-en-circulo.webp",
-                    alt: "ninos en un circulo",
+                    id: 3,
+                    src: IMAGES.hero.img3,
+                    alt: "jovenes en grupo de trabajo",
                   },
                   {
-                    id: 1,
-                    src: "/imgs/ninos-en-circulo.webp",
-                    alt: "ninos en un circulo",
-                  },
-                  {
-                    id: 1,
-                    src: "/imgs/ninos-en-circulo.webp",
-                    alt: "ninos en un circulo",
+                    id: 4,
+                    src: IMAGES.hero.img4,
+                    alt: "libros inclinados",
                   },
                 ]}
               />

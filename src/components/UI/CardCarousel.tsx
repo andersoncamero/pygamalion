@@ -22,7 +22,7 @@ export const CardCarousel: React.FC<CardCarouselPros> = ({
           className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${className}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <span className="absolute inset-x-3 bottom-4 border border-[var(--color-light)]/50 rounded-xl text-[var(--color-dark)] text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-semibold capitalize bg-[var(--color-light)]/50 backdrop-blur-sm transition-all duration-300 group-hover:bg-[var(--color-light)]/90">
+        <span className="absolute left-1/2 -translate-x-1/2 bottom-4 border border-[var(--color-light)]/50 rounded-xl text-[var(--color-dark)] text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-semibold capitalize bg-[var(--color-light)]/50 backdrop-blur-sm transition-all duration-300 group-hover:bg-[var(--color-light)]/90">
           {titleImage}
         </span>
       </div>

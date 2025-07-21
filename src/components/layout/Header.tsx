@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { NavContainer } from "./NavContainer";
 import { getScrolledColorVariant } from "../../utilis/utils";
+import { IMAGES } from "../../config/images";
 
 interface HeaderProps {
   activeTab: string;
@@ -44,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
       <div className="w-full mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-2 sm:py-3 md:py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-shrink-0 mr-2 sm:mr-3 md:mr-4">
-            <Logo src={scrolled ? "/logo.webp" : "/logo-FA.webp"} />
+            <Logo src={scrolled ? IMAGES.logos.white : IMAGES.logos.blue} />
           </div>
           <div className="flex items-center">
             <NavContainer
