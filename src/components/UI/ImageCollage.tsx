@@ -38,9 +38,10 @@ export const ImageCollage: React.FC<CollageProps> = ({ images }) => {
 
   return (
     <div className="w-full max-w-xl mx-auto p-4 rounded-[30px] relative">
-      <div className="relative pt-[140%] md:pt-[120%] lg:pt-[130%]">
+      <div className="relative pt-[125%] md:pt-[115%] lg:pt-[120%]">
         <div className="absolute inset-0 flex flex-col gap-4">
-          <div className="flex flex-row gap-4 flex-grow-[2] min-h-0">
+
+          <div className="flex flex-row gap-4 flex-[3] min-h-0">
             <div className="w-2/3 h-full rounded-[20px] overflow-hidden flex-shrink-0">
               <img
                 src={displayImages[0]?.src || "/placeholder.svg"}
@@ -50,7 +51,7 @@ export const ImageCollage: React.FC<CollageProps> = ({ images }) => {
             </div>
 
             <div className="w-1/3 flex flex-col gap-4 h-full flex-shrink-0">
-              <div className="flex-1 rounded-[20px] overflow-hidden shadow-lg">
+              <div className="flex-[1] rounded-[20px] overflow-hidden">
                 <img
                   src={displayImages[1]?.src || "/placeholder.svg"}
                   alt={displayImages[1]?.alt}
@@ -59,34 +60,39 @@ export const ImageCollage: React.FC<CollageProps> = ({ images }) => {
               </div>
 
               <div
-                className="flex-1 rounded-[20px] shadow-lg"
-                style={{ backgroundColor: "#F9DED7" }}
+                className="flex-[1.5] rounded-[20px] bg-[var(--color-primary)]/50"
+
               ></div>
             </div>
           </div>
 
-          <div className="flex flex-row gap-4 flex-grow-[1] min-h-0">
-            <div
-              className="w-1/3 h-full rounded-[20px] shadow-lg flex-shrink-0"
-              style={{ backgroundColor: "#F26A5A" }}
-            ></div>
 
-            <div className="w-1/3 flex flex-col gap-4 h-full flex-shrink-0">
+          <div className="flex flex-row gap-4 flex-[2] min-h-0">
+
+            <div className="w-2/3 flex flex-row gap-2 h-full flex-shrink-0">
+
               <div
-                className="flex-1 rounded-[20px] shadow-lg"
-                style={{ backgroundColor: "#F7A84F" }}
-              ></div>
+                className="w-2/4 h-full rounded-[20px] flex-shrink-0 bg-[var(--color-red)]"
+              />
 
-              <div className="flex-1 rounded-[20px] overflow-hidden shadow-lg">
-                <img
-                  src={displayImages[3]?.src || "/placeholder.svg"}
-                  alt={displayImages[3]?.alt}
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500 ease-in-out"
+
+              <div className="w-1/2 flex flex-col gap-4 h-full flex-shrink-0">
+                <div
+                  className="flex-1 rounded-[20px] bg-[var(--color-orange)]/90"
                 />
+
+                <div className="flex-1 rounded-[20px] overflow-hidden">
+                  <img
+                    src={displayImages[3]?.src || "/placeholder.svg"}
+                    alt={displayImages[3]?.alt}
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500 ease-in-out"
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="w-1/3 h-full rounded-[20px] overflow-hidden shadow-lg flex-shrink-0">
+
+            <div className="w-1/3 h-full rounded-[20px] overflow-hidden flex-shrink-0">
               <img
                 src={displayImages[2]?.src || "/placeholder.svg"}
                 alt={displayImages[2]?.alt}
