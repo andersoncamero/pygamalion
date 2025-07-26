@@ -16,13 +16,12 @@ export const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-[var(--color-light)] text-lg sm:text-md md:text-lg lg:text-xl">
-              Transformando la educación a través del poder de las expectativas
-              positivas y el acompañamiento personalizado.
+              Tejemos mundos que acogen la diferencia, una voz a la vez.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="flex-1 min-w-[180px] max-w-sm">
-              <h4 className="font-normal mb-4 text-xl sm:text-md md:text-lg lg:text-xl text-left">Redes Sociales</h4>
+              <h4 className="font-normal mb-4 text-xl sm:text-md md:text-lg lg:text-xl text-left">Síguenos</h4>
               <motion.ul
                 initial="hidden"
                 whileInView="visible"
