@@ -161,7 +161,7 @@ export const Hero: React.FC = () => {
             El Efecto Pigmalion es nuestro faro en la construcción de futuros sociales. 
           </motion.h1>
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-1 sm:pt-4 md:pt-6 lg:pt-8 text-center"
+            className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-1 sm:pt-1 md:pt-2 lg:pt-3 text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{

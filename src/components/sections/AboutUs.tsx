@@ -7,12 +7,12 @@ export const AboutUs: React.FC = () => {
     <div>
       <section className="w-full flex flex-col lg:flex-row lg:items-stretch lg:space-x-12 space-y-8 lg:space-y-0 p-4 sm:p-6 md:p-10 lg:p-20 min-h-screen m-auto bg-cover">
         <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 h-full">
-          <div className="flex-1 space-y-4 sm:space-y-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-dark)]">
+          <div className="flex flex-1 flex-col overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] p-6 sm:p-8 md:p-10 lg:p-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-dark)] mb-4">
               ¿Quiénes somos?
             </h2>
-            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)]">
-              Somos Pygmalion Education House, un sello educativo especializado
+            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] mb-4">
+              Somos Pygmalión Education House, un sello educativo especializado
               en la creación, producción y difusión de contenidos que promueven
               la formación de educadores y estudiantes que se reconocen como
               participantes activos en el cambio social; como diseñadores de
@@ -21,19 +21,19 @@ export const AboutUs: React.FC = () => {
               prácticas pedagógicas efectivas, el desarrollo curricular y el
               fortalecimiento profesional continuo.
             </p>
-            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl  text-[var(--color-gray)]">
+            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] mb-6">
               Nuestra labor se fundamenta en el Efecto Pigmalión, reconocemos
               que las expectativas positivas tienen el poder de transformar el
               desempeño, la motivación y la autoestima. Creemos profundamente en
               el potencial de cada persona y en el impacto de una educación que
               confía, inspira y acompaña.
             </p>
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-3 sm:space-y-4 flex-1">
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-secondary)] mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
-                    Efecto Pygmalion
+                    Efecto Pygmalión
                   </h4>
                   <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg">
                     Creemos en el poder de las expectativas positivas para
@@ -112,11 +112,11 @@ export const AboutUs: React.FC = () => {
       <section className="bg-[var(--color-light)] rounded-3xl p-8 md:p-16 lg:p-20  m-auto bg-cover">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-dark)] mb-4">
-            Nuestros Valores
+            Valores fundamentales
           </h2>
-          <p className="text-xl sm:text-2xl lg:text-3xl text-[var(--color-gray)] mx-auto">
-            Los principios que guían nuestro trabajo y definen nuestra identidad
-            como organización educativa
+          <p className="text-xl sm:text-2xl lg:text- 3xl text-[var(--color-gray)] mx-auto">
+            Nuestras acciones están orientadas por valores que inspiran la
+            construcción de una sociedad más empática, equitativa y reflexiva.
           </p>
         </div>
         <div className="flex flex-col md:flex-row md:justify-between md:space-x-8 space-y-8 md:space-y-0">
