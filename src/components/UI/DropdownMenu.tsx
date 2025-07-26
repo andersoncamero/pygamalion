@@ -2,6 +2,7 @@ import type React from "react";
 import type { SubMenuLink } from "../../interfaces/interfaces";
 import { getItemColorClasses, scrollToSection } from "../../utilis/utils";
 import { AnimatePresence, motion } from "motion/react";
+import { Button } from "./Button";
 
 interface DropdownMenuProps {
   isVisible: boolean;
@@ -49,9 +50,9 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
               transition={{ duration: 0.2, delay: index * 0.05 }}
               role="none"
             >
-              <button
+              <Button
                 onClick={() => handleSubItemClick(subItem.tab)}
-                className={`font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-sm py-2 px-4 rounded-md w-full text-left block hover:bg-gray-50 ${getItemColorClasses(
+                className={`font-semibold transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-lg py-2 px-4 rounded-md w-full text-left block hover:bg-gray-50 ${getItemColorClasses(
                   activeTab,
                   subItem.tab,
                   scrolled
@@ -61,7 +62,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 <motion.div whileHover={{ x: 4 }} whileTap={{ scale: 0.98 }}>
                   {subItem.label}
                 </motion.div>
-              </button>
+              </Button>
             </motion.li>
           ))}
         </motion.ul>

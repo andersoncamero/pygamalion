@@ -46,7 +46,7 @@ export const VerticalSubMenu: React.FC<VerticalSubMenuProps> = ({
         <li key={subItem.tab}>
           <button
             onClick={() => handleClick(subItem.tab)}
-            className={`font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-sm py-2 px-4 ${getItemColorClasses(
+            className={`font-semibold transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-lg py-2 px-4 ${getItemColorClasses(
               activeTab,
               subItem.tab,
               scrolled,
