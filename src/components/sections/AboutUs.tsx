@@ -111,7 +111,7 @@ export const AboutUs: React.FC = () => {
 
       <section className="bg-[var(--color-light)] rounded-3xl p-8 md:p-16 lg:p-20  m-auto bg-cover">
         <div className="text-center mb-12">
-          <h2 className="text-7xl text-[var(--color-dark)] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-dark)] mb-4">
             Nuestros Valores
           </h2>
           <p className="text-xl sm:text-2xl lg:text-3xl text-[var(--color-gray)] mx-auto">
