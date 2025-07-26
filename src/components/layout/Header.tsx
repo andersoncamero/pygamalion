@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
 
   return (
     <header
-      className={`fixed top-0 w-full backdrop-blur-sm shadow-sm border-b border-[var(--color-primary)]/20 z-50 transition-all duration-400 ease-in-out ${getScrolledColorVariant(
+      className={`fixed top-0 w-full backdrop-blur-sm shadow-sm z-50 transition-all duration-400 ease-in-out ${getScrolledColorVariant(
         scrolled
       )} px-8 md:px-16 lg:px-24 m-auto bg-cover`}
       role="banner"

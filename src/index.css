@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fredoka:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pompiere&family=Rubik+Bubbles&display=swap");
 @import "tailwindcss";
 
 :root {
-  --font-primary: "Comic Neue";
-  --font-secondary: "Fredoka";
+  --font-primary: "Rubik Bubbles";
+  --font-secondary: "Pompiere";
+  --font-three: "Sugo Display";
 
   --color-primary: #00698c;
   --color-secondary: #13b6cb;
@@ -13,8 +14,15 @@
   --color-yellow: #ffd481;
   --color-orange: #e68447;
   --color-purple: #854698;
-  --color-red: #F26A5A;
-  
+  --color-red: #f26a5a;
+}
+
+@font-face {
+  font-family: "Sugo Display";
+  src: url("/font/Sugo-Pro-Display-Regular-trial.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
@@ -22,9 +30,11 @@
     font-family: var(--font-secondary);
   }
 
-  h1,
-  h2 {
-    font-family: var(--font-primary);
+  h2, h4 {
+    font-family: var(--font-three);
+  }
+  p {
+    font-family: var(--font-secondary);
   }
 }
 
@@ -36,7 +46,14 @@
   .font-secondary {
     font-family: var(--font-secondary);
   }
+
+  .font-three {
+    font-family: var(--font-three);
+  }
+
+
 }
+
 
 @keyframes scroll {
   0% {
@@ -62,6 +79,16 @@
   }
   100% {
     transform: translateX(calc(-400px * 5 - 0.5rem * 10));
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
@@ -111,4 +138,10 @@
 .animate-scroll,
 .animate-scroll-paused {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer utilities {
+  .animate-floating {
+    animation: floating 3s ease-in-out infinite;
+  }
 }

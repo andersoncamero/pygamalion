@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { CardCarousel } from "../UI/CardCarousel";
 import { AnimatedWord } from "../UI/AnimateWord";
-import { ImageCollage } from "../UI/ImageCollage";
+
 import { IMAGES } from "../../config/images";
 
 const heroImages = [
@@ -21,15 +21,16 @@ const heroImages = [
     alt: "Grupo diverso de estudiantes en clase",
     title: "Aprendizaje sin etiquetas",
   },
-    {
+  {
     src: IMAGES.carousel.img4,
     alt: "Grupo diverso de estudiantes en clase",
     title: "Conciencia y comporomiso",
-  },  {
+  },
+  {
     src: IMAGES.carousel.img5,
     alt: "Grupo diverso de estudiantes en clase",
     title: " Convivencia en la pluralidad",
-  }
+  },
 ];
 
 export const Hero: React.FC = () => {
@@ -66,43 +67,42 @@ export const Hero: React.FC = () => {
   );
 
   return (
-    <section className="pt-32 md:pt-42 lg:pt-52 pb-16 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)] px-8 md:px-16 lg:px-24 m-auto bg-cover">
+    <section className="pt-32 md:pt-35 lg:pt-37 pb-16 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)] px-8 md:px-16 lg:px-24 m-auto bg-cover">
       <div className="w-full mx-auto px-4 ">
         <div className="flex flex-col lg:flex-row items-center lg:items-start text-left w-full gap-8">
-          <div className="flex-1 mt-2 lg:mt-16 box-content md:box-border">
-            <motion.h1 className="font-bold font-primary text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-[var(--color-dark)] leading-tight flex flex-wrap gap-3 line-clamp-2 overflow-hidden">
+          <div className="flex-1 mt-2 lg:mt-16 box-content md:box-border flex flex-col items-center text-center">
+            <motion.h1 className="font-bold font-primary text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-[var(--color-dark)] leading-tight flex flex-wrap gap-3 line-clamp-2 overflow-hidden justify-center text-center">
               {splitText("En cada")}
               <AnimatedWord
-                colorClass="bg-[var(--color-secondary)]/30"
+                colorClass="bg-[var(--color-secondary)]/50"
                 delay={0.6}
               >
                 voz
               </AnimatedWord>
               {splitText("habita una")}
               <AnimatedWord
-                colorClass="bg-[var(--color-yellow)]/30 "
+                colorClass="bg-[var(--color-yellow)]/50 "
                 delay={0.6}
               >
                 historia
               </AnimatedWord>
               {splitText("que merece ser")}
               <AnimatedWord
-                colorClass="bg-[var(--color-purple)]/30"
+                colorClass="bg-[var(--color-purple)]/50"
                 delay={0.6}
               >
                 escuchada
               </AnimatedWord>
               {splitText("y")}
               <AnimatedWord
-                colorClass="bg-[var(--color-orange)]/30"
+                colorClass="bg-[var(--color-orange)]/50"
                 delay={0.6}
               >
                 reconocida
               </AnimatedWord>
             </motion.h1>
-
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[var(--color-dark)]/70 font-secondary leading-relaxed pt-6 sm:pt-12 md:pt-16 lg:pt-20"
+              className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-6 sm:pt-12 md:pt-16 lg:pt-20 text-center"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{
@@ -112,49 +112,11 @@ export const Hero: React.FC = () => {
               }}
             >
               Nuestro compromiso es contribuir a la construcción de un mundo en
-              el que cada persona pueda encontrar su lugar a través de una
-              educación transformadora.
+              el que cada persona pueda encontrar su lugar.
             </motion.p>
           </div>
-
-          <div className="w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
-            <motion.div
-              className="w-full h-auto rounded-xl  overflow-hidden"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={
-                isVisible
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.95 }
-              }
-              transition={{ type: "spring", duration: 0.8, delay: 0.8 }}
-            >
-              <ImageCollage
-                images={[
-                  {
-                    id: 1,
-                    src: IMAGES.hero.img1,
-                    alt: "ninos con maestra",
-                  },
-                  {
-                    id: 2,
-                    src: IMAGES.hero.img2,
-                    alt: "ninos leyendo",
-                  },
-                  {
-                    id: 3,
-                    src: IMAGES.hero.img3,
-                    alt: "jovenes en grupo de trabajo",
-                  },
-                  {
-                    id: 4,
-                    src: IMAGES.hero.img4,
-                    alt: "libros inclinados",
-                  },
-                ]}
-              />
-            </motion.div>
-          </div>
         </div>
+
         <motion.div
           className="w-full"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -184,6 +146,33 @@ export const Hero: React.FC = () => {
             </div>
           </div>
         </motion.div>
+
+        <div className="flex-1 mt-2 lg:mt-16 box-content md:box-border gap-4 flex flex-col items-center text-center">
+          <motion.h1
+            className="font-medium font-three text-3xl sm:text-3xl md:text-4xl lg:text-[46px] text-[var(--color-gray)] leading-tight flex flex-wrap line-clamp-2 overflow-hidden justify-center text-center drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+          >
+            El Efecto Pigmalion es nuestro faro en la construcción de futuros sociales. 
+          </motion.h1>
+          <motion.p
+            className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-1 sm:pt-4 md:pt-6 lg:pt-8 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{
+              duration: 0.8,
+              delay: 1.5,
+              ease: "easeOut",
+            }}
+          >
+            Creemos profundamente en el potencial de cada persona y en el impacto de una educación que confía, inspira y acompaña. 
+          </motion.p>
+        </div>
       </div>
     </section>
   );

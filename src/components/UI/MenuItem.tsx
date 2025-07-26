@@ -79,10 +79,10 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 
   const getAdaptiveButtonClasses = () => {
     const baseClasses =
-      "font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap";
+      "font-medium font-three transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap";
 
     const typographyClasses =
-      "text-sm md:text-sm lg:text-sm xl:text-base 2xl:text-base";
+      "text-lg md:text-md lg:text-lg xl:text-xl 2xl:text-base";
 
     const paddingClasses = isVertical
       ? "py-0 px-0"

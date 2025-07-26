@@ -6,7 +6,6 @@ import { Service } from "./sections/Services";
 import { Contact } from "./sections/contact";
 import { Header } from "./layout/Header";
 import { Hero } from "./sections/Hero";
-import { Stats } from "./sections/Stats";
 import { Footer } from "./layout/Footer";
 
 export const MainContent: React.FC = () => {
@@ -16,7 +15,6 @@ export const MainContent: React.FC = () => {
     <div className="bg-[var(--color-light)] min-h-screen ">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       <Hero />
-      <Stats />
       <main className="py-4">
         <div className="w-full px-4">
           <Tabs

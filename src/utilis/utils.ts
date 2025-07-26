@@ -39,6 +39,6 @@ export const getScrolledColorVariant = (
   scrolled: boolean,
 ): string => {
   return scrolled
-  ? "bg-[var(--color-light)]/95 text-[var(--color-dark)] shadow-md"
-  : "bg-[var(--color-primary)]/95 text-[var(--color-light)] shadow-sm";
+  ? "bg-[var(--color-light)]/95 text-[var(--color-dark)] shadow-md border-b border-[var(--color-light)]/90 "
+  : "bg-[var(--color-primary)]/95 text-[var(--color-light)] shadow-sm border-b border-[var(--color-primary)]/90";
 };
