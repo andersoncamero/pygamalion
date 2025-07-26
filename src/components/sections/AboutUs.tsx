@@ -1,6 +1,7 @@
-import { Brain, CheckCircle, Globe, Handshake, Users } from "lucide-react";
+import { Brain, CheckCircle, Globe, Handshake, Heart, Users } from "lucide-react";
 import type React from "react";
 import { IMAGES } from "../../config/images";
+
 
 export const AboutUs: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ export const AboutUs: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-dark)] mb-4">
               ¿Quiénes somos?
             </h2>
-            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] mb-4">
+            <p className="text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] mb-4">
               Somos Pygmalión Education House, un sello educativo especializado
               en la creación, producción y difusión de contenidos que promueven
               la formación de educadores y estudiantes que se reconocen como
@@ -21,7 +22,7 @@ export const AboutUs: React.FC = () => {
               prácticas pedagógicas efectivas, el desarrollo curricular y el
               fortalecimiento profesional continuo.
             </p>
-            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] mb-6">
+            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] mb-6">
               Nuestra labor se fundamenta en el Efecto Pigmalión, reconocemos
               que las expectativas positivas tienen el poder de transformar el
               desempeño, la motivación y la autoestima. Creemos profundamente en
@@ -29,51 +30,51 @@ export const AboutUs: React.FC = () => {
               confía, inspira y acompaña.
             </p>
             <div className="space-y-3 sm:space-y-4 flex-1">
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-3 mt-5">
                 <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-secondary)] mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
+                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
                     Efecto Pygmalión
                   </h4>
-                  <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg">
+                  <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">
                     Creemos en el poder de las expectativas positivas para
                     impulsar el desarrollo, la autoestima y la superación
                     personal.
                   </p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-3 mt-5">
                 <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-secondary)] mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
+                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
                     Transformación social
                   </h4>
-                  <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg">
+                  <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">
                     Desarrollamos contenidos orientados a la formación de
                     educadores y estudiantes como diseñadores de futuros
                     sociales más justos y sostenibles.
                   </p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-3 mt-5">
                 <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-secondary)] mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
+                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
                     Educacion Inclusiva
                   </h4>
-                  <p className="font-normal text-[var(--color-gray)] text-md sm:text-sm md:text-md lg:text-lg">
+                  <p className="font-normal text-[var(--color-gray)] text-md sm:text-sm md:text-md lg:text-lg xl:text-2xl">
                     Promovemos entornos de aprendizaje accesibles, equitativos y
                     participativos que acogen la diversidad y eliminan barreras.
                   </p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-3 mt-5">
                 <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-secondary)] mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
+                  <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
                     Aprendizaje Socioemocional
                   </h4>
-                  <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg">
+                  <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">
                     Integramos el aprendizaje socioemocional como componente
                     esencial en nuestros contenidos educativos.
                   </p>
@@ -162,7 +163,7 @@ export const AboutUs: React.FC = () => {
               className=" rounded-xl shadow-lg w-full aspect-[4/3] object-fill mb-4"
             />
             <div className="w-16 h-16 bg-[var(--color-secondary)] rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-[var(--color-primary)]" />
+              <Heart className="w-8 h-8 text-[var(--color-primary)]" />
             </div>
             <h4 className="text-xl font-semibold text-[var(--color-dark)] mb-2">
               Empatía
