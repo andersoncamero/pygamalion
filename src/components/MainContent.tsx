@@ -15,7 +15,7 @@ export const MainContent: React.FC = () => {
     <div className="bg-[var(--color-light)] min-h-screen ">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       <Hero />
-      <main className="py-4">
+      <main className="py-0.5">
         <div className="w-full px-4">
           <Tabs
             value={activeTab}

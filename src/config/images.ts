@@ -34,5 +34,9 @@ export const IMAGES = {
         img3: `${CDN_BASE_URL}/images/values/img-3.webp`,
         img4: `${CDN_BASE_URL}/images/values/img-4.webp`,
         img5: `${CDN_BASE_URL}/images/values/img-5.webp`,
+    },
+
+    aboutUs: {
+        img1: `${CDN_BASE_URL}/images/about-us/img-1.webp`,
     }
 }
