@@ -14,7 +14,7 @@ const heroImages = [
   {
     src: IMAGES.carousel.img2,
     alt: "Maestra ayudando a estudiante con tecnología",
-    title: "Pasiòn por la educaciòn",
+    title: "Pasión por la educación",
   },
   {
     src: IMAGES.carousel.img3,
@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
   );
 
   return (
-    <section className="pt-32 md:pt-35 lg:pt-37 pb-16 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)] px-8 md:px-16 lg:px-24 m-auto bg-cover">
+    <section className="pt-32 md:pt-35 lg:pt-37 pb-4 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)] px-8 md:px-16 lg:px-24 m-auto bg-cover">
       <div className="w-full mx-auto px-4 ">
         <div className="flex flex-col lg:flex-row items-center lg:items-start text-left w-full gap-8">
           <div className="flex-1 mt-2 lg:mt-16 box-content md:box-border flex flex-col items-center text-center">
@@ -102,7 +102,7 @@ export const Hero: React.FC = () => {
               </AnimatedWord>
             </motion.h1>
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-6 sm:pt-12 md:pt-16 lg:pt-20 text-center"
+              className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-3 sm:pt-6 md:pt-8 lg:pt-10 text-center"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{
@@ -161,7 +161,7 @@ export const Hero: React.FC = () => {
             El Efecto Pigmalion es nuestro faro en la construcción de futuros sociales. 
           </motion.h1>
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-1 sm:pt-1 md:pt-2 lg:pt-3 text-center"
+            className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-0.5 text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{

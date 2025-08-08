@@ -85,7 +85,7 @@ export const AboutUs: React.FC = () => {
           <div className="flex flex-1 flex-col overflow-hidden rounded-2xl shadow-xl min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
             <div className="flex-[7] flex flex-col">
               <img
-                src="https://grupogeard.com/wp-content/uploads/2021/05/11.-Trabajo-en-equipo-en-educacion-virtual-como-fomentarlo.png?height=400&width=600"
+                src={IMAGES.aboutUs.img1}
                 alt="Equipo de Pygmalion Education House trabajando con educadores"
                 className="w-full h-full"
               />
@@ -110,12 +110,12 @@ export const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[var(--color-light)] rounded-3xl p-8 md:p-16 lg:p-20  m-auto bg-cover">
+      <section className="bg-[var(--color-light)] rounded-3xl px-8 md:px-16 lg:px-20 pt-0.5 pb-8 md:pb-16 lg:pb-20 m-auto bg-cover">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-dark)] mb-4">
             Valores fundamentales
           </h2>
-          <p className="text-xl sm:text-2xl lg:text- 3xl text-[var(--color-gray)] mx-auto">
+          <p className="text-xl sm:text-2xl lg:text-3xl text-[var(--color-gray)] mx-auto">
             Nuestras acciones están orientadas por valores que inspiran la
             construcción de una sociedad más empática, equitativa y reflexiva.
           </p>
