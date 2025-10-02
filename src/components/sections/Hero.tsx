@@ -158,7 +158,7 @@ export const Hero: React.FC = () => {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            El Efecto Pigmalion es nuestro faro en la construcción de futuros sociales. 
+            El Efecto Pygmalión es nuestro faro en la construcción de futuros sociales. 
           </motion.h1>
           <motion.p
             className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-0.5 text-center"
