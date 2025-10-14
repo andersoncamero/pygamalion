@@ -24,12 +24,12 @@ const heroImages = [
   {
     src: IMAGES.carousel.img4,
     alt: "Grupo diverso de estudiantes en clase",
-    title: "Conciencia y comporomiso",
+    title: "Conciencia y compromiso",
   },
   {
     src: IMAGES.carousel.img5,
     alt: "Grupo diverso de estudiantes en clase",
-    title: " Convivencia en la pluralidad",
+    title: "Diversidad",
   },
 ];
 
@@ -158,10 +158,11 @@ export const Hero: React.FC = () => {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            El Efecto Pygmalión es nuestro faro en la construcción de futuros sociales. 
+            El Efecto Pigmalión nos inspira y orienta. 
           </motion.h1>
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-0.5 text-center"
+            className="text-md sm:text-lg md:text-xl lg:text-3xl text-[var(--color-dark)] font-secondary leading-relaxed pt-0.5 text-center truncate w-full"
+            style={{ whiteSpace: "nowrap" }}
             initial={{ opacity: 0, y: 30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{
@@ -170,7 +171,7 @@ export const Hero: React.FC = () => {
               ease: "easeOut",
             }}
           >
-            Creemos profundamente en el potencial de cada persona y en el impacto de una educación que confía, inspira y acompaña. 
+            Creemos profundamente en el potencial de cada persona y en el impacto de una educación que confía, inspira y acompaña.
           </motion.p>
         </div>
       </div>

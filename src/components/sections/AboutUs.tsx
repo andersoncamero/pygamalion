@@ -13,7 +13,7 @@ export const AboutUs: React.FC = () => {
               ¿Quiénes somos?
             </h2>
             <p className="text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] mb-4">
-              Somos Pygmalión Education House, un sello educativo especializado
+              Somos Pigmalión Education House, un sello educativo especializado
               en la creación, producción y difusión de contenidos que promueven
               la formación de educadores y estudiantes que se reconocen como
               participantes activos en el cambio social; como diseñadores de
@@ -34,7 +34,7 @@ export const AboutUs: React.FC = () => {
                 <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-secondary)] mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-medium text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]">
-                    Efecto Pygmalión
+                    Efecto Pigmalión
                   </h4>
                   <p className="font-normal text-[var(--color-gray)] text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">
                     Creemos en el poder de las expectativas positivas para
@@ -86,7 +86,7 @@ export const AboutUs: React.FC = () => {
             <div className="flex-[7] flex flex-col">
               <img
                 src={IMAGES.aboutUs.img1}
-                alt="Equipo de Pygmalion Education House trabajando con educadores"
+                alt="Equipo de Pigmalión Education House trabajando con educadores"
                 className="w-full h-full"
               />
             </div>
@@ -95,13 +95,13 @@ export const AboutUs: React.FC = () => {
                 Nuestra Visión
               </h3>
               <p className="text-[var(--color-light)] leading-relaxed text-xl sm:text-xl md:text-2xl lg:text-3xl">
-                En Pygmalion Education House buscamos contribuir a una educación
+                En Pigmalión Education House buscamos contribuir a una educación
                 más humana y equitativa; por ello, el bienestar emocional y la
                 inclusión educativa son ejes centrales de nuestro enfoque.
                 Aspiramos a ser un referente en el ámbito educativo, no solo por
                 la calidad de nuestros servicios y contenidos, sino también por
                 el compromiso ético y transformador que guía nuestro quehacer.
-                En Pygmalion Education House creemos que cada persona tiene una
+                En Pigmalión Education House creemos que cada persona tiene una
                 voz que merece ser escuchada y un camino único de aprendizaje
                 que necesita ser acompañado con respeto y dedicación.
               </p>

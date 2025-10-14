@@ -16,7 +16,7 @@ export const Logo: React.FC<LogoProps> = ({ src, className }) => {
     >
       <img
         src={src}
-        alt="Pygmalion Education House"
+        alt="Pigmalión Education House"
         className={className || defaultAdaptiveClasses}
       />
     </Link>
