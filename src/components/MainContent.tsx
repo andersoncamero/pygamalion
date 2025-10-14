@@ -4,6 +4,7 @@ import { TabsContent } from "./UI/TabsContent";
 import { AboutUs } from "./sections/AboutUs";
 import { Service } from "./sections/Services";
 import { Contact } from "./sections/contact";
+import { Lectoescritura } from "./sections/Lectoescritura";
 import { Header } from "./layout/Header";
 import { Hero } from "./sections/Hero";
 import { Footer } from "./layout/Footer";
@@ -30,6 +31,11 @@ export const MainContent: React.FC = () => {
             <TabsContent value="Servicios">
               <section id="Servicios">
                 <Service />
+              </section>
+            </TabsContent>
+            <TabsContent value="letoescritura">
+              <section id="letoescritura">
+                <Lectoescritura />
               </section>
             </TabsContent>
             <TabsContent value="contactenos">
