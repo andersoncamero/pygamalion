@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-[var(--color-light)]/20 p-8 text-center">
           <p className="text-[var(--color-light)] text-lg sm:text-sm md:text-md lg:text-lg">
-            © 2025 Pigmalión Education House. Todos los derechos reservados.
+            © 2025 Pygmalion Education House. Todos los derechos reservados.
           </p>
         </div>
       </div>
