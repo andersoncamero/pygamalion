@@ -1,7 +1,13 @@
-import { Brain, CheckCircle, Globe, Handshake, Heart, Users } from "lucide-react";
+import {
+  Brain,
+  CheckCircle,
+  Globe,
+  Handshake,
+  Heart,
+  Users,
+} from "lucide-react";
 import type React from "react";
 import { IMAGES } from "../../config/images";
-
 
 export const AboutUs: React.FC = () => {
   return (
@@ -13,7 +19,7 @@ export const AboutUs: React.FC = () => {
               ¿Quiénes somos?
             </h2>
             <p className="text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--color-gray)] mb-4">
-              Somos Pigmalión Education House, un sello educativo especializado
+              Somos Pygmalion Education House, un sello educativo especializado
               en la creación, producción y difusión de contenidos que promueven
               la formación de educadores y estudiantes que se reconocen como
               participantes activos en el cambio social; como diseñadores de
@@ -95,15 +101,16 @@ export const AboutUs: React.FC = () => {
                 Nuestra Visión
               </h3>
               <p className="text-[var(--color-light)] leading-relaxed text-xl sm:text-xl md:text-2xl lg:text-3xl">
-                En Pigmalión Education House buscamos contribuir a una educación
-                más humana y equitativa; por ello, el bienestar emocional y la
-                inclusión educativa son ejes centrales de nuestro enfoque.
-                Aspiramos a ser un referente en el ámbito educativo, no solo por
-                la calidad de nuestros servicios y contenidos, sino también por
-                el compromiso ético y transformador que guía nuestro quehacer.
-                En Pigmalión Education House creemos que cada persona tiene una
-                voz que merece ser escuchada y un camino único de aprendizaje
-                que necesita ser acompañado con respeto y dedicación.
+                En Pygmalion Education House buscamos contribuir a la
+                construcción de una educación más humana y equitativa. Por ello,
+                el bienestar emocional y la inclusión educativa son ejes
+                centrales de nuestro enfoque. Aspiramos a consolidarnos como un
+                referente en el ámbito educativo, reconocido por la calidad de
+                nuestros contenidos y servicios, y por el compromiso ético y
+                transformador que inspira nuestro quehacer. Creemos en una
+                educación que escucha, respeta y acompaña los caminos únicos de
+                aprendizaje de cada persona, y que reconoce en cada voz la
+                posibilidad de transformar el mundo.
               </p>
             </div>
           </div>

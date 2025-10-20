@@ -27,8 +27,8 @@ export const MainContent: React.FC = () => {
                 <AboutUs />
               </section>
             </TabsContent>
-            <TabsContent value="Servicios">
-              <section id="Servicios">
+            <TabsContent value="soluciones">
+              <section id="soluciones">
                 <Service />
               </section>
             </TabsContent>

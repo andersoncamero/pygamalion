@@ -33,8 +33,8 @@ export const NavMenu: React.FC<NavMenuProps> = ({
       ],
     },
     {
-      label: "Servicios",
-      tab: "servicios",
+      label: "Soluciones",
+      tab: "soluciones",
       subMenu: [
         { label: "Asesorías", tab: "asesorias" },
         { label: "Desarrollo profesional", tab: "desarrollo-profesional" },
@@ -60,6 +60,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({
         { label: "Blogs", tab: "blogs" },
         { label: "Podcasts", tab: "podcasts" },
         { label: "Artículos", tab: "articulos" },
+        { label: "Entrevistas", tab: "entrevistas" },
       ],
     },
     { label: "Contacto", tab: "contactenos" },

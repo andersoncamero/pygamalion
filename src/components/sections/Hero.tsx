@@ -148,7 +148,7 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         <div className="flex-1 mt-2 lg:mt-16 box-content md:box-border gap-4 flex flex-col items-center text-center">
-          <motion.h1
+            <motion.h1
             className="font-medium font-three text-3xl sm:text-3xl md:text-4xl lg:text-[46px] text-[var(--color-gray)] leading-tight flex flex-wrap line-clamp-2 overflow-hidden justify-center text-center drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] filter saturate-[100%]"
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -157,9 +157,9 @@ export const Hero: React.FC = () => {
               delay: 0.6,
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
-          >
-            El Efecto Pigmalión nos inspira y orienta. 
-          </motion.h1>
+            >
+            EL EFECTO PIGMALIÓN NOS INSPIRA Y ORIENTA.
+            </motion.h1>
           <motion.p
             className="text-md sm:text-lg md:text-xl lg:text-3xl text-[var(--color-dark)] font-secondary leading-relaxed pt-0.5 text-center truncate w-full"
             style={{ whiteSpace: "nowrap" }}
