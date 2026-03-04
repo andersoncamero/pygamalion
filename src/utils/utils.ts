@@ -9,19 +9,20 @@ export const scrollToSection = (id: string, offset: number = 0) => {
 export const getItemColorClasses = (
   activeTab: string,
   itemTab: string,
-  isVertical?: boolean,
+  isVertical: boolean = false,
+  isOpen: boolean = false
 ): string => {
 
   const isActive = activeTab === itemTab;
 
   if (isVertical) {
-    return isActive
-      ? "text-[var(--color-light)] font-bold"
+    return isActive || isOpen
+      ? "text-[var(--color-dark)] font-bold"
       : "text-[var(--color-light)]/80";
   }
 
-  if (isActive) {
-    return "text-[var(--color-light)] font-bold border-b-2 border-[var(--color-secondary)]";
+  if (isActive || isOpen) {
+    return "text-[var(--color-dark)] font-bold";
   } else {
     return "text-[var(--color-light)]/90 transition-all duration-300";
   }

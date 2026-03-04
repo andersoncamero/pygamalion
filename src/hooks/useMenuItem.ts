@@ -103,10 +103,28 @@ export const useMenuItem = ({
         const colorClasses = getItemColorClasses(
             activeTab,
             item.tab,
-            isVertical
+            isVertical,
+            isDropdownOpen
         );
 
         return `${baseClasses} ${typographyClasses} ${paddingClasses} ${spacingClasses} ${colorClasses}`;
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleClick();
+        } else if (e.key === "ArrowDown" && item.subMenu && !isDropdownOpen) {
+            e.preventDefault();
+            if (isMobile || !showDropdownOnHover) {
+                setClickedDropdown(item.tab);
+            } else {
+                setActiveDropdown(item.tab);
+            }
+        } else if (e.key === "Escape") {
+            setActiveDropdown("");
+            setClickedDropdown("");
+        }
     };
 
     return {
@@ -115,6 +133,7 @@ export const useMenuItem = ({
         handleMouseEnter,
         handleMouseLeave,
         handleClick,
+        handleKeyDown,
         getAdaptiveButtonClasses,
     };
 };

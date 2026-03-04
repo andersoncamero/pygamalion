@@ -28,6 +28,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
     handleMouseEnter,
     handleMouseLeave,
     handleClick,
+    handleKeyDown,
     getAdaptiveButtonClasses,
   } = useMenuItem(props);
 
@@ -40,9 +41,10 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
     >
       <Button
         onClick={handleClick}
+        onKeyDown={handleKeyDown}
         className={getAdaptiveButtonClasses()}
-        aria-haspopup={item.subMenu ? "true" : undefined}
-        aria-expanded={item.subMenu ? isDropdownOpen.toString() : undefined}
+        aria-haspopup={item.subMenu ? "menu" : undefined}
+        aria-expanded={isDropdownOpen}
       >
         <motion.div
           whileHover={{ scale: isVertical ? 1.02 : 1.05 }}
