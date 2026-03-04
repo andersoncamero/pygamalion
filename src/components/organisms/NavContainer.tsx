@@ -13,7 +13,7 @@ export const NavContainer: React.FC = () => {
   }) as React.RefObject<HTMLDivElement>;
 
   const getIconColor = () => {
-    return "text-[var(--color-light)] hover:text-[var(--color-secondary)]";
+    return "text-white hover:text-[var(--color-secondary)]";
   };
 
   const getButtonStyle = () => {
@@ -38,6 +38,7 @@ export const NavContainer: React.FC = () => {
         <NavMenu orientation="horizontal" />
       </div>
       <Button
+        variant="ghost"
         className={getButtonStyle()}
         onClick={handleToggleMenu}
         aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
@@ -57,7 +58,7 @@ export const NavContainer: React.FC = () => {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="absolute top-full left-0 w-full border-t shadow-xl md:hidden transition-all duration-300 bg-[var(--color-primary)] border-[var(--color-light)]/10"
+          className="absolute top-full left-0 w-full shadow-2xl md:hidden transition-all duration-300 bg-[var(--color-primary)]/95 backdrop-blur-lg border-t border-white/10 rounded-b-2xl overflow-hidden"
         >
           <NavMenu
             orientation="vertical"

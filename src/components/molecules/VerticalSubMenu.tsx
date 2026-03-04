@@ -57,9 +57,10 @@ export const VerticalSubMenu: React.FC<VerticalSubMenuProps> = ({
         <li key={subItem.tab} role="none">
           <Button
             id={`v-submenu-item-${index}`}
+            variant="ghost"
             onClick={() => handleClick(subItem.tab)}
             onKeyDown={(e) => handleKeyDown(e, index)}
-            className={`font-semibold transition-all duration-300 ease-in-out focus:bg-[var(--color-light)]/20 focus:outline-none text-lg py-2 px-4 rounded-md w-full text-left hover:bg-[var(--color-light)]/10 ${getItemColorClasses(
+            className={`font-bold font-three transition-all duration-300 ease-in-out focus:bg-white/10 focus:outline-none text-base md:text-[15px] lg:text-base xl:text-[17px] 2xl:text-base py-2 px-4 rounded-lg w-full text-left flex items-center hover:bg-white/10 ${getItemColorClasses(
               activeTab,
               subItem.tab,
               isVertical

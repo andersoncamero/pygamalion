@@ -11,10 +11,9 @@
   --color-light: #e8e3dd;
   --color-gray: #706f6f;
   --color-dark: #1d1d1b;
-  --color-yellow: #ffd481;
-  --color-orange: #e68447;
-  --color-purple: #854698;
-  --color-red: #f26a5a;
+  --color-accent-yellow: #FFD200;
+  --color-accent-orange: #FF6B35;
+  --color-accent-pink: #FF9F9F;
 }
 
 @font-face {

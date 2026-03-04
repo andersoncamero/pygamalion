@@ -40,6 +40,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
       onMouseLeave={handleMouseLeave}
     >
       <Button
+        variant="ghost"
         onClick={handleClick}
         onKeyDown={handleKeyDown}
         className={getAdaptiveButtonClasses()}

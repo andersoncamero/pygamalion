@@ -48,7 +48,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -10, scale: 0.95 }}
           transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 mt-2 w-full md:w-56 bg-[var(--color-primary)] rounded-lg shadow-xl py-2 z-60 overflow-hidden"
+          className="absolute top-full left-0 mt-2 w-full md:w-64 bg-[var(--color-primary)]/95 backdrop-blur-md rounded-xl shadow-2xl py-3 z-60 border border-white/10 overflow-hidden"
           role="menu"
         >
           {subMenu.map((subItem, index) => (
@@ -58,12 +58,14 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2, delay: index * 0.05 }}
               role="none"
+              className="px-2 mb-1 last:mb-0"
             >
               <Button
                 id={`dropdown-item-${index}`}
+                variant="ghost"
                 onClick={() => handleSubItemClick(subItem.tab)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
-                className={`font-semibold transition-all duration-300 ease-in-out focus:bg-[var(--color-light)] focus:text-[var(--color-primary)] focus:outline-none text-lg py-2 px-4 w-full text-left block hover:bg-[var(--color-light)] hover:text-[var(--color-primary)] ${getItemColorClasses(
+                className={`font-three transition-all duration-300 ease-in-out focus:bg-white/10 focus:outline-none text-base md:text-[15px] lg:text-base xl:text-[17px] 2xl:text-base py-2 px-4 rounded-lg w-full text-left flex items-center hover:bg-white/10 hover:text-white ${getItemColorClasses(
                   activeTab,
                   subItem.tab
                 )}`}

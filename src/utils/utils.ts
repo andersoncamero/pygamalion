@@ -29,5 +29,5 @@ export const getItemColorClasses = (
 };
 
 export const getScrolledColorVariant = (): string => {
-  return "bg-[var(--color-primary)] text-[var(--color-light)] shadow-md border border-[var(--color-light)]/10";
+  return "bg-[var(--color-primary)]/95 text-[var(--color-light)]";
 };

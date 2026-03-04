@@ -9,9 +9,9 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full backdrop-blur-sm z-50 transition-all duration-400 ease-in-out bg-cover ${scrolled
-        ? "bg-[var(--color-primary)] text-[var(--color-light)] shadow-md border-b border-[var(--color-primary)]/90"
-        : "bg-[var(--color-primary)]/95 text-[var(--color-light)] shadow-sm border-b border-[var(--color-primary)]/90"
+      className={`fixed top-0 w-full backdrop-blur-md z-50 transition-all duration-400 ease-in-out bg-cover ${scrolled
+        ? "bg-[var(--color-primary)]/90 text-[var(--color-light)] shadow-md border-b border-[var(--color-primary)]/80"
+        : "bg-[var(--color-primary)]/80 text-[var(--color-light)] shadow-sm border-b border-[var(--color-primary)]/60"
         }`}
       role="banner"
       aria-label="Navegación principal"

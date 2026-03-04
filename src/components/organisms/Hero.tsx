@@ -42,13 +42,13 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="pt-32 md:pt-35 lg:pt-37 pb-4 bg-gradient-to-br from-[var(--color-primary)]/15 via-[var(--color-light)] to-[var(--color-light)] px-8 md:px-16 lg:px-24 m-auto bg-cover">
-      <div className="w-full mx-auto px-4 ">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start text-left w-full gap-8">
-          <HeroHeader isVisible={isVisible} />
-        </div>
+    <section className="pt-48 md:pt-56 lg:pt-64 pb-4 bg-[var(--color-light)] px-4 md:px-8 lg:px-12 m-auto">
+      <div className="max-w-[1600px] mx-auto flex flex-col items-center w-full">
+        <HeroHeader isVisible={isVisible} />
 
-        <HeroGallery images={heroImages} isVisible={isVisible} />
+        <div className="w-full mt-12">
+          <HeroGallery images={heroImages} isVisible={isVisible} />
+        </div>
 
         <HeroFooter isVisible={isVisible} />
       </div>

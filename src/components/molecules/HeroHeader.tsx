@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { AnimatedWord } from "../atoms/AnimateWord";
 import { Typography } from "../atoms/Typography";
 
+
 interface HeroHeaderProps {
     isVisible: boolean;
 }
@@ -30,34 +31,31 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ isVisible }) => {
     );
 
     return (
-        <div className="flex-1 mt-2 lg:mt-16 box-content md:box-border flex flex-col items-center text-center">
-            <Typography variant="h1" className="font-bold font-primary text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-[var(--color-dark)] leading-tight flex flex-wrap gap-3 line-clamp-2 overflow-hidden justify-center text-center">
+        <div className="w-full flex flex-col items-center text-center px-0">
+            <Typography variant="h1" className="font-bold font-primary text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-[var(--color-dark)] leading-[1.4] mb-6 flex flex-wrap justify-center gap-x-3 gap-y-4">
                 {splitText("En cada")}
-                <AnimatedWord colorClass="bg-[var(--color-secondary)]/50" delay={0.6}>
+                <AnimatedWord colorClass="bg-[#8ecae6]" delay={0.6} className="text-black">
                     voz
                 </AnimatedWord>
                 {splitText("habita una")}
-                <AnimatedWord colorClass="bg-[var(--color-yellow)]/50 " delay={0.6}>
+                <AnimatedWord colorClass="bg-[#ffde91]" delay={0.8} className="text-black">
                     historia
                 </AnimatedWord>
                 {splitText("que merece ser")}
-                <AnimatedWord colorClass="bg-[var(--color-purple)]/50" delay={0.6}>
+                <AnimatedWord colorClass="bg-[#bda5cc]" delay={1.0} className="text-black">
                     escuchada
                 </AnimatedWord>
                 {splitText("y")}
-                <AnimatedWord colorClass="bg-[var(--color-orange)]/50" delay={0.6}>
+                <AnimatedWord colorClass="bg-[#f7b68e]" delay={1.2} className="text-black">
                     reconocida
                 </AnimatedWord>
             </Typography>
+
             <motion.p
-                className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-3 sm:pt-6 md:pt-8 lg:pt-10 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{
-                    duration: 0.8,
-                    delay: 1.5,
-                    ease: "easeOut",
-                }}
+                className="text-lg sm:text-xl md:text-2xl text-[var(--color-dark)] font-secondary leading-relaxed max-w-3xl mb-4 italic opacity-80"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
             >
                 Nuestro compromiso es contribuir a la construcción de un mundo en el que cada persona pueda encontrar su lugar.
             </motion.p>

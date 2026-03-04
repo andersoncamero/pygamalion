@@ -22,7 +22,7 @@ export const HeroGallery: React.FC<HeroGalleryProps> = ({ images, isVisible }) =
             animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", duration: 0.8, delay: 0.5 }}
         >
-            <div className="my-8 sm:my-12">
+            <div className="my-4">
                 <div className="overflow-hidden w-full">
                     <div
                         className={`flex whitespace-nowrap ${isPaused ? "animate-scroll-paused" : "animate-scroll"

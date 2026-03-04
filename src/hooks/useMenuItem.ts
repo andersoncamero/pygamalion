@@ -90,7 +90,7 @@ export const useMenuItem = ({
             "font-medium font-three transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap";
 
         const typographyClasses =
-            "text-lg md:text-md lg:text-lg xl:text-xl 2xl:text-base";
+            "text-base md:text-[15px] lg:text-base xl:text-[17px] 2xl:text-base font-bold";
 
         const paddingClasses = isVertical
             ? "py-0 px-0"
