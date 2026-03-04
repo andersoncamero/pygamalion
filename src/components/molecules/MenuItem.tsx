@@ -4,8 +4,8 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "../atoms/Button";
 import { DropdownMenu } from "../organisms/DropdownMenu";
 import { VerticalSubMenu } from "./VerticalSubMenu";
-import { getItemColorClasses } from "../../utils/utils";
 import type { MenuItem as MenuItemType } from "../../interfaces/interfaces";
+import { useMenuItem } from "../../hooks/useMenuItem";
 
 interface MenuItemProps {
   item: MenuItemType;
@@ -21,79 +21,17 @@ interface MenuItemProps {
   onMenuClose?: () => void;
 }
 
-export const MenuItem: React.FC<MenuItemProps> = ({
-  item,
-  activeTab,
-  setActiveTab,
-  scrolled,
-  orientation,
-  activeDropdown,
-  clickedDropdown,
-  setActiveDropdown,
-  setClickedDropdown,
-  onMenuClose,
-}) => {
-  const isVertical = orientation === "vertical";
-  const showDropdownOnHover = !isVertical;
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const shouldShowDropdown = isMobile ? clickedDropdown : activeDropdown;
-  const isDropdownOpen = shouldShowDropdown === item.tab;
+export const MenuItem: React.FC<MenuItemProps> = (props) => {
+  const { item, onMenuClose, activeTab, setActiveTab, scrolled } = props;
 
-  const handleMouseEnter = () => {
-    if (item.subMenu && showDropdownOnHover) {
-      setActiveDropdown(item.tab);
-    } else {
-      setClickedDropdown(item.tab);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (showDropdownOnHover) {
-      setActiveDropdown("");
-    }
-  };
-
-  const handleClick = () => {
-    if (item.subMenu) {
-      if (isMobile || !showDropdownOnHover) {
-        setClickedDropdown(clickedDropdown === item.tab ? "" : item.tab);
-      }
-    } else {
-      setActiveTab(item.tab);
-      setActiveDropdown("");
-      setClickedDropdown("");
-
-      if (isVertical && onMenuClose) {
-        onMenuClose();
-      }
-
-      requestAnimationFrame(() => {
-        const element = document.getElementById(item.tab);
-        if (element) {
-          const y = element.getBoundingClientRect().top + window.scrollY - 200;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      });
-    }
-  };
-
-  const getAdaptiveButtonClasses = () => {
-    const baseClasses =
-      "font-medium font-three transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 inline-flex items-center whitespace-nowrap";
-
-    const typographyClasses =
-      "text-lg md:text-md lg:text-lg xl:text-xl 2xl:text-base";
-
-    const paddingClasses = isVertical
-      ? "py-0 px-0"
-      : "py-1.5 px-2 md:px-2 lg:px-3 xl:px-4 2xl:px-4 w-full md:w-auto text-left md:text-center";
-
-    const spacingClasses = item.subMenu
-      ? "justify-between md:justify-center space-x-1"
-      : "";
-
-    return `${baseClasses} ${typographyClasses} ${paddingClasses} ${spacingClasses}`;
-  };
+  const {
+    isVertical,
+    isDropdownOpen,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleClick,
+    getAdaptiveButtonClasses,
+  } = useMenuItem(props);
 
   return (
     <li
@@ -102,24 +40,19 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {item.subMenu && isVertical ? (
-        <Button
-          onClick={handleClick}
-          className={`${getAdaptiveButtonClasses()} ${getItemColorClasses(
-            activeTab,
-            item.tab,
-            scrolled,
-            isVertical
-          )}`}
-          aria-haspopup={item.subMenu ? "true" : undefined}
-          aria-expanded={item.subMenu ? isDropdownOpen.toString() : undefined}
+      <Button
+        onClick={handleClick}
+        className={getAdaptiveButtonClasses()}
+        aria-haspopup={item.subMenu ? "true" : undefined}
+        aria-expanded={item.subMenu ? isDropdownOpen.toString() : undefined}
+      >
+        <motion.div
+          whileHover={{ scale: isVertical ? 1.02 : 1.05 }}
+          whileTap={{ scale: isVertical ? 0.98 : 0.95 }}
+          className="flex items-center space-x-1"
         >
-          <motion.div
-            whileHover={{ scale: isVertical ? 1.02 : 1.05 }}
-            whileTap={{ scale: isVertical ? 0.98 : 0.95 }}
-            className="flex items-center space-x-1"
-          >
-            {item.label}
+          {item.label}
+          {item.subMenu && (
             <motion.span
               className="ml-1"
               animate={{ rotate: isDropdownOpen ? 180 : 0 }}
@@ -127,40 +60,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             >
               <ChevronDown className="h-4 w-4" />
             </motion.span>
-          </motion.div>
-        </Button>
-      ) : (
-        <Button
-          onClick={handleClick}
-          className={`${getAdaptiveButtonClasses()} ${getItemColorClasses(
-            activeTab,
-            item.tab,
-            scrolled,
-            isVertical
-          )}`}
-          aria-haspopup={item.subMenu ? "true" : undefined}
-          aria-expanded={item.subMenu ? isDropdownOpen.toString() : undefined}
-        >
-          <motion.div
-            whileHover={{ scale: isVertical ? 1.02 : 1.05 }}
-            whileTap={{ scale: isVertical ? 0.98 : 0.95 }}
-            className="flex items-center space-x-1"
-          >
-            {item.label}
-            {item.subMenu && (
-              <motion.span
-                className="ml-1"
-                animate={{
-                  rotate: isDropdownOpen ? 180 : 0,
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronDown className="h-4 w-4" />
-              </motion.span>
-            )}
-          </motion.div>
-        </Button>
-      )}
+          )}
+        </motion.div>
+      </Button>
 
       {!isVertical && item.subMenu && (
         <DropdownMenu

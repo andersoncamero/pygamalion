@@ -38,10 +38,12 @@ El proyecto sigue una estructura organizada basada en principios de modularidad 
 ```text
 src/
 ├── components/
-│   ├── UI/          # Componentes básicos y reutilizables (Botones, Tabs, etc.)
-│   ├── layout/      # Estructura general de la aplicación (Navbar, Footer, Layouts)
-│   ├── pages/       # Vistas principales de la aplicación
-│   └── sections/    # Secciones específicas que componen las páginas
+├── components/
+│   ├── atoms/       # Componentes básicos (Botones, Iconos, Logo)
+│   ├── molecules/   # Grupos de átomos (MenuItems, Tabs)
+│   ├── organisms/   # Secciones complejas (Header, Footer, Hero)
+│   ├── templates/   # Estructuras de página (MainContent)
+│   └── pages/       # Vistas finales de la aplicación (HomePage)
 ├── hooks/           # Hooks personalizados para lógica reutilizable
 ├── interfaces/      # Definiciones de tipos y contratos (TypeScript)
 ├── utils/           # Funciones de utilidad y helpers comunes

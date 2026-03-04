@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCard } from "../atoms/ProductCard";
+import { ProductCard } from "../molecules/ProductCard";
 
 const sampleProducts = [
   {

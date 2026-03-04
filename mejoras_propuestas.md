@@ -8,8 +8,15 @@ Este documento detalla las mejoras identificadas para el proyecto, clasificadas 
 ## 1. Refactorización y Limpieza de Código
 
 ### 📁 Corrección de Nombres
-- **Directorio `src/utilis`** [🔴 **CRÍTICA**]: Existe una errata en el nombre. Debe renombrarse a `src/utils`. Esto afecta la profesionalidad del código y puede causar confusión en las importaciones.
-- **Archivo `src/components/sections/contact.tsx`** [🟠 **PRIORITARIA**]: Debe renombrarse a `Contact.tsx` para seguir el estándar PascalCase del proyecto.
+- [x] **Directorio `src/utilis`** [🔴 **CRÍTICA**]: Corregido a `src/utils`.
+- [x] **Archivo `src/components/sections/contact.tsx`** [🟠 **PRIORITARIA**]: Corregido a `Contact.tsx` (PascalCase).
+
+### 🏗️ Arquitectura Atómica
+- [x] **Atomic Design** [🔴 **CRÍTICA**]: Implementación de estructura de carpetas `atoms`, `molecules`, `organisms`, `templates` y `pages`.
+- [x] **`ProductCard.tsx`** [🟠 **PRIORITARIA**]: Refactorizado como **Molécula** con sus átomos base (`Badge`, `Typography`, `CardImage`).
+- **`Hero.tsx`** [🟠 **PRIORITARIA**]: Organismo masivo (6.5KB). Debe dividirse en moléculas como `HeroInfo`, `HeroGallery` y átomos de animación.
+- **`Footer.tsx`** [🟠 **PRIORITARIA**]: Organismo complejo. Debe dividirse en moléculas de `FooterLinks`, `SocialLinks` y el átomo `Copyright`.
+- **`Stats.tsx`** [🔵 **NORMAL**]: Extraer la lógica de cada estadística a una molécula `StatCounter`.
 
 ### ✂️ División de Componentes Extensos
 - **`AboutUs.tsx`** [🔵 **NORMAL**]: Dividir en sub-componentes dentro de una carpeta dedicada.
