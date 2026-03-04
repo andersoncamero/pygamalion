@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
-import { Button } from "./Button";
-import { DropdownMenu } from "./DropdownMenu";
+import { Button } from "../atoms/Button";
+import { DropdownMenu } from "../organisms/DropdownMenu";
 import { VerticalSubMenu } from "./VerticalSubMenu";
 import { getItemColorClasses } from "../../utils/utils";
 import type { MenuItem as MenuItemType } from "../../interfaces/interfaces";

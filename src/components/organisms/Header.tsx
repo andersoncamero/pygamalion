@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Logo } from "./Logo";
+import { Logo } from "../atoms/Logo";
 import { NavContainer } from "./NavContainer";
 //import { getScrolledColorVariant } from "../../utils/utils";
 import { IMAGES } from "../../config/images";

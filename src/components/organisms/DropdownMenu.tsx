@@ -2,7 +2,7 @@ import type React from "react";
 import type { SubMenuLink } from "../../interfaces/interfaces";
 import { getItemColorClasses, scrollToSection } from "../../utils/utils";
 import { AnimatePresence, motion } from "motion/react";
-import { Button } from "./Button";
+import { Button } from "../atoms/Button";
 
 interface DropdownMenuProps {
   isVisible: boolean;

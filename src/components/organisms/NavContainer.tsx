@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavMenu } from "./NavMenu";
-import { Button } from "../UI/Button";
+import { Button } from "../atoms/Button";
 import { Menu, X } from "lucide-react";
 import { useClickOutside } from "../../hooks/useClickOutside";
 
@@ -76,11 +76,10 @@ export const NavContainer: React.FC<NavContainerProps> = ({
       {menuOpen && (
         <div
           ref={menuRef}
-          className={`absolute top-full left-0 w-full border-t shadow-md md:hidden transition-colors duration-200 ${
-            scrolled
+          className={`absolute top-full left-0 w-full border-t shadow-md md:hidden transition-colors duration-200 ${scrolled
               ? "bg-[var(--color-light)] border-[var(--color-primary)]/20"
               : "bg-[var(--color-primary)]/95 border-[var(--color-dark)]/20"
-          }`}
+            }`}
         >
           <NavMenu
             activeTab={activeTab}

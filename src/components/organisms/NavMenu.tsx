@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { MenuList } from "../UI/MenuList";
+import { MenuList } from "../molecules/MenuList";
 import type { MenuItem } from "../../interfaces/interfaces";
 
 interface NavMenuProps {
@@ -16,7 +16,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({
   activeTab,
   setActiveTab,
   scrolled,
-  onMenuClose, 
+  onMenuClose,
 }) => {
   const [activeDropdown, setActiveDropdown] = useState<string>("");
   const [clickedDropdown, setClickedDropdown] = useState<string>("");
@@ -66,16 +66,16 @@ export const NavMenu: React.FC<NavMenuProps> = ({
   ];
 
   const layoutClasses =
-  orientation === "horizontal"
-    ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-8 w-full md:w-auto md:justify-end"
-    : "flex flex-col space-y-4 p-4";
+    orientation === "horizontal"
+      ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-8 w-full md:w-auto md:justify-end"
+      : "flex flex-col space-y-4 p-4";
 
-    const handleTabChange = (tab: string) => {
-      setActiveTab(tab)
-      if (orientation === "vertical" && onMenuClose) {
-        onMenuClose();
-      }
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab)
+    if (orientation === "vertical" && onMenuClose) {
+      onMenuClose();
     }
+  }
 
   return (
     <motion.nav

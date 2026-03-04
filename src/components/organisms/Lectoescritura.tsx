@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCard } from "../UI/ProductCard";
+import { ProductCard } from "../atoms/ProductCard";
 
 const sampleProducts = [
   {

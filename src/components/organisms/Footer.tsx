@@ -1,7 +1,7 @@
 import type React from "react";
 import { motion } from "motion/react";
 
-import { Logo } from "./Logo";
+import { Logo } from "../atoms/Logo";
 import { IMAGES } from "../../config/images";
 
 export const Footer: React.FC = () => {
@@ -45,23 +45,23 @@ export const Footer: React.FC = () => {
                   { icon: "https://img.icons8.com/?size=100&id=13930&format=png&color=000000", alt: "LinkedIn", url: "https://linkedin.com" },
                   { icon: "https://img.icons8.com/?size=100&id=K6KK5ISTAWwE&format=png&color=000000", alt: "TikTok", url: "https://tiktok.com" }
                 ].map((social) => (
-                    <motion.li
+                  <motion.li
                     key={social.alt}
                     variants={{
                       visible: {
-                      opacity: 1,
-                      y: 0,
-                      scale: 1,
-                      transition: {
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 20
-                      }
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        transition: {
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20
+                        }
                       },
                       hidden: {
-                      opacity: 0,
-                      y: 20,
-                      scale: 0.8
+                        opacity: 0,
+                        y: 20,
+                        scale: 0.8
                       }
                     }}
                     whileHover={{
@@ -71,27 +71,27 @@ export const Footer: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.95 }}
                     className="flex flex-col items-center space-y-1 cursor-pointer relative"
-                    >
-                    <div 
+                  >
+                    <div
                       onClick={() => {
-                      const element = document.querySelector(`[data-social="${social.alt}"]`);
-                      element?.classList.add('animate-spin');
-                      setTimeout(() => {
-                        window.open(social.url, "_blank");
-                        element?.classList.remove('animate-spin');
-                      }, 1000);
+                        const element = document.querySelector(`[data-social="${social.alt}"]`);
+                        element?.classList.add('animate-spin');
+                        setTimeout(() => {
+                          window.open(social.url, "_blank");
+                          element?.classList.remove('animate-spin');
+                        }, 1000);
                       }}
                       className="relative"
                     >
                       <img
-                      src={social.icon}
-                      alt={social.alt}
-                      data-social={social.alt}
-                      loading="lazy"
-                      className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 transition-transform duration-300"
+                        src={social.icon}
+                        alt={social.alt}
+                        data-social={social.alt}
+                        loading="lazy"
+                        className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 transition-transform duration-300"
                       />
                     </div>
-                    </motion.li>
+                  </motion.li>
                 ))}
               </motion.ul>
             </div>

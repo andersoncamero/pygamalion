@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { CardCarousel } from "../UI/CardCarousel";
-import { AnimatedWord } from "../UI/AnimateWord";
+import { CardCarousel } from "./CardCarousel";
+import { AnimatedWord } from "../atoms/AnimateWord";
 
 import { IMAGES } from "../../config/images";
 
@@ -128,9 +128,8 @@ export const Hero: React.FC = () => {
           <div className="my-8 sm:my-12">
             <div className="overflow-hidden w-full">
               <div
-                className={`flex whitespace-nowrap ${
-                  isPaused ? "animate-scroll-paused" : "animate-scroll"
-                }`}
+                className={`flex whitespace-nowrap ${isPaused ? "animate-scroll-paused" : "animate-scroll"
+                  }`}
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
               >
@@ -158,7 +157,7 @@ export const Hero: React.FC = () => {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            El Efecto Pygmalión es nuestro faro en la construcción de futuros sociales. 
+            El Efecto Pygmalión es nuestro faro en la construcción de futuros sociales.
           </motion.h1>
           <motion.p
             className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-[var(--color-dark)] font-secondary leading-relaxed pt-0.5 text-center"
@@ -170,7 +169,7 @@ export const Hero: React.FC = () => {
               ease: "easeOut",
             }}
           >
-            Creemos profundamente en el potencial de cada persona y en el impacto de una educación que confía, inspira y acompaña. 
+            Creemos profundamente en el potencial de cada persona y en el impacto de una educación que confía, inspira y acompaña.
           </motion.p>
         </div>
       </div>

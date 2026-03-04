@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Tabs } from "./UI/Tabs";
-import { TabsContent } from "./UI/TabsContent";
-import { AboutUs } from "./sections/AboutUs";
-import { Service } from "./sections/Services";
-import { Contact } from "./sections/Contact";
-import { Lectoescritura } from "./sections/Lectoescritura";
-import { Header } from "./layout/Header";
-import { Hero } from "./sections/Hero";
-import { Footer } from "./layout/Footer";
+import { Tabs } from "../molecules/Tabs";
+import { TabsContent } from "../molecules/TabsContent";
+import { AboutUs } from "../organisms/AboutUs";
+import { Service } from "../organisms/Services";
+import { Contact } from "../organisms/Contact";
+import { Lectoescritura } from "../organisms/Lectoescritura";
+import { Header } from "../organisms/Header";
+import { Hero } from "../organisms/Hero";
+import { Footer } from "../organisms/Footer";
 
 export const MainContent: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("sobre-nosotros");
