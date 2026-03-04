@@ -6,24 +6,21 @@ import {
   getScrolledColorVariant,
   scrollToSection,
 } from "../../utils/utils";
+import { useUI } from "../../context/UIContext";
 
 interface VerticalSubMenuProps {
   subMenu: SubMenuLink[];
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-  scrolled: boolean;
   isVertical: boolean;
   onMenuClose?: () => void;
 }
 
 export const VerticalSubMenu: React.FC<VerticalSubMenuProps> = ({
   subMenu,
-  activeTab,
-  setActiveTab,
-  scrolled,
   isVertical,
   onMenuClose,
 }) => {
+  const { activeTab, setActiveTab } = useUI();
+
   const handleClick = (tab: string) => {
     setActiveTab(tab);
     if (onMenuClose) {
@@ -38,18 +35,15 @@ export const VerticalSubMenu: React.FC<VerticalSubMenuProps> = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -5 }}
       transition={{ duration: 0.2 }}
-      className={`pl-4 mt-1 space-y-1 ${getScrolledColorVariant(
-        scrolled
-      )} rounded-md border border-gray-200 py-2`}
+      className={`pl-4 mt-1 space-y-1 ${getScrolledColorVariant()} rounded-md py-2`}
     >
       {subMenu.map((subItem) => (
         <li key={subItem.tab}>
           <button
             onClick={() => handleClick(subItem.tab)}
-            className={`font-semibold transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-lg py-2 px-4 ${getItemColorClasses(
+            className={`font-semibold transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-lg py-2 px-4 rounded-md w-full text-left hover:bg-[var(--color-light)] hover:text-[var(--color-primary)] ${getItemColorClasses(
               activeTab,
               subItem.tab,
-              scrolled,
               isVertical
             )}`}
           >

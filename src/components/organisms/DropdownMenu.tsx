@@ -3,24 +3,21 @@ import type { SubMenuLink } from "../../interfaces/interfaces";
 import { getItemColorClasses, scrollToSection } from "../../utils/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "../atoms/Button";
+import { useUI } from "../../context/UIContext";
 
 interface DropdownMenuProps {
   isVisible: boolean;
   subMenu: SubMenuLink[];
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-  scrolled: boolean;
   onMenuClose?: () => void;
 }
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = ({
   isVisible,
   subMenu,
-  activeTab,
-  setActiveTab,
-  scrolled,
   onMenuClose,
 }) => {
+  const { activeTab, setActiveTab } = useUI();
+
   const handleSubItemClick = (tab: string) => {
     setActiveTab(tab);
     if (onMenuClose) {
@@ -37,8 +34,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -10, scale: 0.95 }}
           transition={{ duration: 0.2 }}
-          className={`absolute top-full left-0 mt-2 w-full md:w-48 ${!scrolled ? "bg-[var(--color-primary)]" : "bg-[var(--color-light)]"
-            } rounded-lg shadow-lg py-3 z-60`}
+          className="absolute top-full left-0 mt-2 w-full md:w-56 bg-[var(--color-primary)] rounded-lg shadow-xl py-3 z-60 border border-[var(--color-light)]/10"
           role="menu"
         >
           {subMenu.map((subItem, index) => (
@@ -51,10 +47,9 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
             >
               <Button
                 onClick={() => handleSubItemClick(subItem.tab)}
-                className={`font-semibold transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-lg py-2 px-4 rounded-md w-full text-left block hover:bg-gray-50 ${getItemColorClasses(
+                className={`font-semibold transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-lg py-2 px-4 rounded-md w-full text-left block hover:bg-[var(--color-light)] hover:text-[var(--color-primary)] ${getItemColorClasses(
                   activeTab,
-                  subItem.tab,
-                  scrolled
+                  subItem.tab
                 )}`}
                 role="menuitem"
               >

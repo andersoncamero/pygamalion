@@ -4,17 +4,7 @@ import { Button } from "../atoms/Button";
 import { Menu, X } from "lucide-react";
 import { useClickOutside } from "../../hooks/useClickOutside";
 
-interface NavContainerProps {
-  activeTab: string;
-  setActiveTab: (val: string) => void;
-  scrolled: boolean;
-}
-
-export const NavContainer: React.FC<NavContainerProps> = ({
-  activeTab,
-  setActiveTab,
-  scrolled,
-}) => {
+export const NavContainer: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const menuRef = useClickOutside<HTMLDivElement>({
@@ -23,17 +13,13 @@ export const NavContainer: React.FC<NavContainerProps> = ({
   }) as React.RefObject<HTMLDivElement>;
 
   const getIconColor = () => {
-    return scrolled
-      ? "text-[var(--color-primary)] hover:text-[var(--color-primary)]"
-      : "text-[var(--colo-dark)] hover:text-[var(--color-secondary)]";
+    return "text-[var(--color-light)] hover:text-[var(--color-secondary)]";
   };
 
   const getButtonStyle = () => {
     const baseClasses = "md:hidden transition-colors duration-200";
     const responsiveClasses = "p-1.5 sm:p-2";
-    const hoverClasses = scrolled
-      ? "hover:bg-[var(--color-primary)]/10"
-      : "hover:bg-[var(--color-dark)]/90";
+    const hoverClasses = "hover:bg-[var(--color-light)]/10";
 
     return `${baseClasses} ${responsiveClasses} ${hoverClasses} rounded-md`;
   };
@@ -47,14 +33,9 @@ export const NavContainer: React.FC<NavContainerProps> = ({
   };
 
   return (
-    <div className="flex items-center">
-      <div className="hidden md:block">
-        <NavMenu
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          orientation="horizontal"
-          scrolled={scrolled}
-        />
+    <div className="flex items-center w-full justify-end">
+      <div className="hidden md:flex flex-grow justify-end mr-4">
+        <NavMenu orientation="horizontal" />
       </div>
       <Button
         className={getButtonStyle()}
@@ -76,16 +57,10 @@ export const NavContainer: React.FC<NavContainerProps> = ({
       {menuOpen && (
         <div
           ref={menuRef}
-          className={`absolute top-full left-0 w-full border-t shadow-md md:hidden transition-colors duration-200 ${scrolled
-              ? "bg-[var(--color-light)] border-[var(--color-primary)]/20"
-              : "bg-[var(--color-primary)]/95 border-[var(--color-dark)]/20"
-            }`}
+          className="absolute top-full left-0 w-full border-t shadow-xl md:hidden transition-all duration-300 bg-[var(--color-primary)] border-[var(--color-light)]/10"
         >
           <NavMenu
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
             orientation="vertical"
-            scrolled={scrolled}
             onMenuClose={handleMenuClose}
           />
         </div>

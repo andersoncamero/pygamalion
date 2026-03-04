@@ -16,11 +16,7 @@ Este documento detalla las mejoras identificadas para el proyecto, clasificadas 
 - [x] **`ProductCard.tsx`** [🟠 **PRIORITARIA**]: Refactorizado como **Molécula** con sus átomos base (`Badge`, `Typography`, `CardImage`).
 - [x] **`Hero.tsx`** [🟠 **PRIORITARIA**]: Refactorizado en moléculas (`HeroHeader`, `HeroGallery`, `HeroFooter`).
 - [x] **`Footer.tsx`** [🟠 **PRIORITARIA**]: Refactorizado en moléculas (`FooterLinks`, `SocialLinks`) y el átomo `Copyright`.
-- **`Stats.tsx`** [🔵 **NORMAL**]: Extraer la lógica de cada estadística a una molécula `StatCounter`.
-
-### ✂️ División de Componentes Extensos
-- **`AboutUs.tsx`** [🔵 **NORMAL**]: Dividir en sub-componentes dentro de una carpeta dedicada.
-- **`MenuItem.tsx`** [🔵 **NORMAL**]: Extraer la lógica de interacción a un hook personalizado.
+- [x] **`Stats.tsx`** [🔵 **NORMAL**]: Refactorizado en la molécula `StatCounter`.
 
 ## 2. Arquitectura y Estado
 

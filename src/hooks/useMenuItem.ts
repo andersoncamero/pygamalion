@@ -1,32 +1,30 @@
 import { useEffect, useState } from "react";
 import type { MenuItem as MenuItemType } from "../interfaces/interfaces";
 import { getItemColorClasses } from "../utils/utils";
+import { useUI } from "../context/UIContext";
 
 interface UseMenuItemProps {
     item: MenuItemType;
-    activeTab: string;
-    setActiveTab: (tab: string) => void;
     orientation: "horizontal" | "vertical";
     activeDropdown: string;
     clickedDropdown: string;
     setActiveDropdown: (tab: string) => void;
     setClickedDropdown: (tab: string) => void;
     onMenuClose?: () => void;
-    scrolled: boolean;
+    setActiveTab: (tab: string) => void;
 }
 
 export const useMenuItem = ({
     item,
-    activeTab,
-    setActiveTab,
     orientation,
     activeDropdown,
     clickedDropdown,
     setActiveDropdown,
     setClickedDropdown,
     onMenuClose,
-    scrolled,
+    setActiveTab: setLocalActiveTab,
 }: UseMenuItemProps) => {
+    const { activeTab, setActiveTab: setGlobalActiveTab } = useUI();
     const isVertical = orientation === "vertical";
     const showDropdownOnHover = !isVertical;
 
@@ -65,7 +63,11 @@ export const useMenuItem = ({
                 setClickedDropdown(clickedDropdown === item.tab ? "" : item.tab);
             }
         } else {
-            setActiveTab(item.tab);
+            // Usar el setter global del contexto
+            setGlobalActiveTab(item.tab);
+            // También llamar al setter local si existe (por ejemplo para cerrar menús en NavMenu)
+            setLocalActiveTab(item.tab);
+
             setActiveDropdown("");
             setClickedDropdown("");
 
@@ -98,7 +100,11 @@ export const useMenuItem = ({
             ? "justify-between md:justify-center space-x-1"
             : "";
 
-        const colorClasses = getItemColorClasses(activeTab, item.tab, scrolled, isVertical);
+        const colorClasses = getItemColorClasses(
+            activeTab,
+            item.tab,
+            isVertical
+        );
 
         return `${baseClasses} ${typographyClasses} ${paddingClasses} ${spacingClasses} ${colorClasses}`;
     };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tabs } from "../molecules/Tabs";
 import { TabsContent } from "../molecules/TabsContent";
 import { AboutUs } from "../organisms/AboutUs";
@@ -9,12 +9,14 @@ import { Header } from "../organisms/Header";
 import { Hero } from "../organisms/Hero";
 import { Footer } from "../organisms/Footer";
 
-export const MainContent: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>("sobre-nosotros");
+import { UIProvider, useUI } from "../../context/UIContext";
+
+const MainContentInner: React.FC = () => {
+  const { activeTab, setActiveTab } = useUI();
 
   return (
     <div className="bg-[var(--color-light)] min-h-screen ">
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Header />
       <Hero />
       <main className="py-0.5">
         <div className="w-full px-4">
@@ -50,3 +52,9 @@ export const MainContent: React.FC = () => {
     </div>
   );
 };
+
+export const MainContent: React.FC = () => (
+  <UIProvider>
+    <MainContentInner />
+  </UIProvider>
+);

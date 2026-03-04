@@ -9,36 +9,24 @@ export const scrollToSection = (id: string, offset: number = 0) => {
 export const getItemColorClasses = (
   activeTab: string,
   itemTab: string,
-  scrolled: boolean,
   isVertical?: boolean,
 ): string => {
 
   const isActive = activeTab === itemTab;
 
-    if (isVertical) {
-    return scrolled
-      ? isActive
-        ? "text-[var(--color-primary)]"
-        : "text-[var(--color-dark)] hover:text-[var(--color-dark)]"
-      : isActive
-        ? "text-[var(--color-dark)]"
-        : "text-[var(--color-light)] hover:text-[var(--color-dark)]";
+  if (isVertical) {
+    return isActive
+      ? "text-[var(--color-light)] font-bold"
+      : "text-[var(--color-light)]/80";
   }
+
   if (isActive) {
-    return scrolled
-      ? "text-[var(--color-gray)] hover:text-[var(--color-gray)]"
-      : "text-[var(--color-dark)] hover:text-[var(--color-gray)]";
+    return "text-[var(--color-light)] font-bold border-b-2 border-[var(--color-secondary)]";
   } else {
-    return scrolled
-      ? "text-[var(--color-dark)] hover:text-[var(--color-dark)]"
-      : "text-[var(--color-light)] hover:text-[var(--color-dark)]";
+    return "text-[var(--color-light)]/90 transition-all duration-300";
   }
 };
 
-export const getScrolledColorVariant = (
-  scrolled: boolean,
-): string => {
-  return scrolled
-  ? "bg-[var(--color-light)]/95 text-[var(--color-dark)] shadow-md border-b border-[var(--color-light)]/90 "
-  : "bg-[var(--color-primary)]/95 text-[var(--color-light)] shadow-sm border-b border-[var(--color-primary)]/90";
+export const getScrolledColorVariant = (): string => {
+  return "bg-[var(--color-primary)] text-[var(--color-light)] shadow-md border border-[var(--color-light)]/10";
 };

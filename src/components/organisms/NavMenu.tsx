@@ -2,22 +2,18 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { MenuList } from "../molecules/MenuList";
 import type { MenuItem } from "../../interfaces/interfaces";
+import { useUI } from "../../context/UIContext";
 
 interface NavMenuProps {
   orientation?: "horizontal" | "vertical";
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-  scrolled: boolean;
   onMenuClose?: () => void;
 }
 
 export const NavMenu: React.FC<NavMenuProps> = ({
   orientation = "horizontal",
-  activeTab,
-  setActiveTab,
-  scrolled,
   onMenuClose,
 }) => {
+  const { setActiveTab } = useUI();
   const [activeDropdown, setActiveDropdown] = useState<string>("");
   const [clickedDropdown, setClickedDropdown] = useState<string>("");
 
@@ -40,7 +36,6 @@ export const NavMenu: React.FC<NavMenuProps> = ({
         { label: "Desarrollo profesional", tab: "desarrollo-profesional" },
         { label: "Diseño", tab: "diseno" },
         { label: "Zona Glossa", tab: "zona-glossa" },
-
       ],
     },
     {
@@ -67,15 +62,15 @@ export const NavMenu: React.FC<NavMenuProps> = ({
 
   const layoutClasses =
     orientation === "horizontal"
-      ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-8 w-full md:w-auto md:justify-end"
+      ? "flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 lg:space-x-6 xl:space-x-8 2xl:space-x-10 w-full md:w-auto md:items-center"
       : "flex flex-col space-y-4 p-4";
 
   const handleTabChange = (tab: string) => {
-    setActiveTab(tab)
+    setActiveTab(tab);
     if (orientation === "vertical" && onMenuClose) {
       onMenuClose();
     }
-  }
+  };
 
   return (
     <motion.nav
@@ -86,9 +81,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({
     >
       <MenuList
         items={menuItems}
-        activeTab={activeTab}
         setActiveTab={handleTabChange}
-        scrolled={scrolled}
         orientation={orientation}
         activeDropdown={activeDropdown}
         clickedDropdown={clickedDropdown}

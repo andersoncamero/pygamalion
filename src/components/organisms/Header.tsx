@@ -1,57 +1,29 @@
-import { useState } from "react";
+import { useUI } from "../../context/UIContext";
 import { Logo } from "../atoms/Logo";
 import { NavContainer } from "./NavContainer";
 //import { getScrolledColorVariant } from "../../utils/utils";
 import { IMAGES } from "../../config/images";
 
-interface HeaderProps {
-  activeTab: string;
-  setActiveTab: (value: string) => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
-  const [scrolled] = useState<boolean>(false);
-
-  /* 
- const handleScroll = useCallback(() => {
-    const isScrolled = window.scrollY > 50;
-    setScrolled(isScrolled);
-  }, []);
- useEffect(() => {
-    let ticking = false;
-
-    const throttledScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", throttledScroll, { passive: true });
-    return () => window.removeEventListener("scroll", throttledScroll);
-  }, [handleScroll]);*/
+export const Header: React.FC = () => {
+  const { scrolled } = useUI();
 
   return (
     <header
-      className={`fixed top-0 w-full backdrop-blur-sm  z-50 transition-all duration-400 ease-in-out bg-[var(--color-primary)]/95 text-[var(--color-light)] shadow-sm border-b border-[var(--color-primary)]/90 px-8 md:px-16 lg:px-24 m-auto bg-cover`}
+      className={`fixed top-0 w-full backdrop-blur-sm z-50 transition-all duration-400 ease-in-out bg-cover ${scrolled
+        ? "bg-[var(--color-primary)] text-[var(--color-light)] shadow-md border-b border-[var(--color-primary)]/90"
+        : "bg-[var(--color-primary)]/95 text-[var(--color-light)] shadow-sm border-b border-[var(--color-primary)]/90"
+        }`}
       role="banner"
       aria-label="Navegación principal"
     >
-      <div className="w-full mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-2 sm:py-3 md:py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center flex-shrink-0 mr-2 sm:mr-3 md:mr-4">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-10 lg:px-16 py-3">
+        <div className="flex items-center justify-between gap-8">
+          <div className="flex-shrink-0">
             <Logo src={IMAGES.logos.blue} />
           </div>
-          <div className="flex items-center">
-            <NavContainer
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-              scrolled={scrolled}
-            />
-          </div>
+          <nav className="flex items-center flex-grow justify-end">
+            <NavContainer />
+          </nav>
         </div>
       </div>
     </header>

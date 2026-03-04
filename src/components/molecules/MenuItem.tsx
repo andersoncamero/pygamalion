@@ -9,9 +9,7 @@ import { useMenuItem } from "../../hooks/useMenuItem";
 
 interface MenuItemProps {
   item: MenuItemType;
-  activeTab: string;
   setActiveTab: (tab: string) => void;
-  scrolled: boolean;
   orientation: "horizontal" | "vertical";
   activeDropdown: string;
   clickedDropdown: string;
@@ -22,7 +20,7 @@ interface MenuItemProps {
 }
 
 export const MenuItem: React.FC<MenuItemProps> = (props) => {
-  const { item, onMenuClose, activeTab, setActiveTab, scrolled } = props;
+  const { item, onMenuClose } = props;
 
   const {
     isVertical,
@@ -68,9 +66,6 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
         <DropdownMenu
           isVisible={isDropdownOpen}
           subMenu={item.subMenu}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          scrolled={scrolled}
           onMenuClose={onMenuClose}
         />
       )}
@@ -78,9 +73,6 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
       {isVertical && item.subMenu && isDropdownOpen && (
         <VerticalSubMenu
           subMenu={item.subMenu}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          scrolled={scrolled}
           isVertical={isVertical}
           onMenuClose={onMenuClose}
         />
