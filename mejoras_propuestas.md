@@ -15,7 +15,7 @@ Este documento detalla las mejoras identificadas para el proyecto, clasificadas 
 - [x] **Atomic Design** [🔴 **CRÍTICA**]: Implementación de estructura de carpetas `atoms`, `molecules`, `organisms`, `templates` y `pages`.
 - [x] **`ProductCard.tsx`** [🟠 **PRIORITARIA**]: Refactorizado como **Molécula** con sus átomos base (`Badge`, `Typography`, `CardImage`).
 - [x] **`Hero.tsx`** [🟠 **PRIORITARIA**]: Refactorizado en moléculas (`HeroHeader`, `HeroGallery`, `HeroFooter`).
-- **`Footer.tsx`** [🟠 **PRIORITARIA**]: Organismo complejo. Debe dividirse en moléculas de `FooterLinks`, `SocialLinks` y el átomo `Copyright`.
+- [x] **`Footer.tsx`** [🟠 **PRIORITARIA**]: Refactorizado en moléculas (`FooterLinks`, `SocialLinks`) y el átomo `Copyright`.
 - **`Stats.tsx`** [🔵 **NORMAL**]: Extraer la lógica de cada estadística a una molécula `StatCounter`.
 
 ### ✂️ División de Componentes Extensos
