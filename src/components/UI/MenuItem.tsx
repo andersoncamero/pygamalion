@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "./Button";
 import { DropdownMenu } from "./DropdownMenu";
 import { VerticalSubMenu } from "./VerticalSubMenu";
-import { getItemColorClasses } from "../../utilis/utils";
+import { getItemColorClasses } from "../../utils/utils";
 import type { MenuItem as MenuItemType } from "../../interfaces/interfaces";
 
 interface MenuItemProps {

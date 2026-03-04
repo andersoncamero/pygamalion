@@ -5,7 +5,7 @@ import {
   getItemColorClasses,
   getScrolledColorVariant,
   scrollToSection,
-} from "../../utilis/utils";
+} from "../../utils/utils";
 
 interface VerticalSubMenuProps {
   subMenu: SubMenuLink[];

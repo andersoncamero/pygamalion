@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Logo } from "./Logo";
 import { NavContainer } from "./NavContainer";
-//import { getScrolledColorVariant } from "../../utilis/utils";
+//import { getScrolledColorVariant } from "../../utils/utils";
 import { IMAGES } from "../../config/images";
 
 interface HeaderProps {
