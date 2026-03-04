@@ -37,7 +37,7 @@ export const AboutUs: React.FC = () => {
   return (
     <div>
       <section className="w-full flex flex-col lg:flex-row lg:items-stretch lg:space-x-12 space-y-8 lg:space-y-0 p-4 sm:p-6 md:p-10 lg:p-20 min-h-screen m-auto bg-cover">
-        <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 h-full">
+        <div className="flex flex-col lg:flex-row w-full gap-8 lg:gap-12 items-stretch h-full">
           <WhoWeAre {...whoWeAreData} />
           <Vision {...visionData} />
         </div>

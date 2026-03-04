@@ -11,7 +11,7 @@ export const CardImage: React.FC<CardImageProps> = ({ src, alt, className = "" }
         <img
             src={src}
             alt={alt}
-            className={`rounded-xl shadow-lg w-full aspect-[4/3] object-fill mb-4 ${className}`}
+            className={`w-full h-full object-cover ${className}`}
         />
     );
 };

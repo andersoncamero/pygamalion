@@ -9,6 +9,7 @@ interface ProductCardProps {
     description?: string;
     price?: string;
     category?: string;
+    className?: string;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -17,18 +18,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     description,
     price,
     category,
+    className = "",
 }) => {
     return (
-        <article className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div className="relative w-full h-50 md:h-50 lg:h-100 overflow-hidden">
-                <CardImage src={imageSrc} alt={title} className="w-full h-full object-cover mb-0 rounded-none shadow-none" />
+        <article className={`bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full ${className}`}>
+            <div className="relative w-full h-48 sm:h-56 md:h-64 overflow-hidden flex-shrink-0">
+                <CardImage src={imageSrc} alt={title} className="w-full h-full" />
                 {category && (
                     <Badge className="absolute top-4 left-4" variant="secondary">
                         {category}
                     </Badge>
                 )}
             </div>
-            <div className="p-8">
+            <div className="p-6 md:p-8 flex flex-col flex-grow">
                 <Typography variant="h3" className="sm:text-lg md:text-xl lg:text-3xl font-bold text-[var(--color-dark)] mb-2">
                     {title}
                 </Typography>

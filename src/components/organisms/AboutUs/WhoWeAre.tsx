@@ -12,7 +12,7 @@ interface WhoWeAreProps {
 
 export const WhoWeAre: React.FC<WhoWeAreProps> = ({ description1, description2, features }) => {
     return (
-        <div className="flex flex-1 flex-col overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] p-6 sm:p-8 md:p-10 lg:p-12">
+        <div className="flex flex-1 flex-col bg-white/40 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] p-6 sm:p-8 md:p-10 lg:p-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[var(--color-dark)] mb-4">
                 ¿Quiénes somos?
             </h2>
